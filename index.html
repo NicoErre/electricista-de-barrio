@@ -6,8 +6,8 @@
   <title>Electricista de Barrio | Electricista de Confianza en tu Barrio - Trabajo Profesional y Presupuestos Honestos</title>
   
   <!-- SEO Local de Alto Rendimiento -->
-  <meta name="description" content="Electricista de confianza en tu barrio. Trabajo profesional, presupuestos honestos. Rápida atención y turnos programados para viviendas, consorcios y locales en los 48 barrios de CABA. Factura oficial." />
-  <meta name="keywords" content="electricista de barrio, electricista de confianza, electricista caba, electricista palermo, electricista caballito, electricista belgrano, electricista devoto, electricista flores, urgencias electricas caba, agendar electricista, tableros electricos" />
+  <meta name="description" content="Electricista de confianza en tu barrio. Trabajo profesional, presupuestos honestos. Rápida atención y turnos programados para viviendas, consorcios y locales en los 48 barrios de CABA. Realizamos factura." />
+  <meta name="keywords" content="electricista de barrio, electricista de confianza, electricista caba, electricista palermo, electricista caballito, electricista devoto, electricista flores, urgencias electricas caba, agendar electricista, tableros electricos" />
   <meta name="author" content="Electricista de Barrio" />
   <meta name="robots" content="index, follow" />
   
@@ -104,7 +104,7 @@
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
         "opens": "00:00",
         "closes": "23:59",
-        "description": "Guardia de Urgencias y Rápida Atención"
+        "description": "Guardia de Urgencias Eléctricas en CABA y GBA"
       }
     ],
     "areaServed": [
@@ -117,17 +117,22 @@
 <body class="bg-white text-slate-800 font-sans antialiased pb-20 md:pb-0 selection:bg-sky-100 selection:text-sky-900">
 
   <!-- ==========================================================================
-       1. Tira Superior de Rápida Atención & Agendamiento
+       1. Tira Superior de Rápida Atención & Llamadas
        ========================================================================== -->
   <aside class="bg-red-600 text-white text-xs sm:text-sm font-semibold py-2 px-4 sticky top-0 z-50 shadow-sm">
     <div class="max-w-6xl mx-auto flex items-center justify-between gap-2">
       <div class="flex items-center gap-2 overflow-hidden text-ellipsis whitespace-nowrap">
         <span class="w-2.5 h-2.5 rounded-full bg-white pulse-glow inline-block flex-shrink-0"></span>
-        <span><strong>Rápida Atención en tu Barrio:</strong> Urgencias en el día y visitas programadas en CABA y GBA.</span>
+        <span><strong>Rápida Atención en tu Barrio:</strong> Urgencias en el día y visitas en CABA y GBA.</span>
       </div>
-      <a href="#agendar" class="bg-white text-red-700 px-3 py-1 rounded-full font-extrabold hover:bg-red-50 transition flex items-center gap-1.5 flex-shrink-0 text-xs shadow-xs">
-        <span>🗓️ Agendar Visita</span>
-      </a>
+      <div class="flex items-center gap-2 flex-shrink-0">
+        <a href="tel:1178232233" class="bg-white text-red-700 px-3 py-1 rounded-full font-extrabold hover:bg-red-50 transition flex items-center gap-1.5 text-xs shadow-xs">
+          <span>📞 Llamar: 11 7823-2233</span>
+        </a>
+        <a href="#agendar" class="hidden sm:inline-flex bg-red-700 text-white border border-red-500 px-3 py-1 rounded-full font-bold hover:bg-red-800 transition items-center gap-1 text-xs">
+          <span>🗓️ Turnos</span>
+        </a>
+      </div>
     </div>
   </aside>
 
@@ -142,7 +147,7 @@
         <div class="w-11 h-11 bg-slate-900 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-sm group-hover:bg-slate-800 transition">
           <svg class="w-7 h-7" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M24 8L8 22H14V38H34V22H40L24 8Z" fill="#0284C7" fill-opacity="0.25" stroke="#38BDF8" stroke-width="2.5" stroke-linejoin="round"/>
-            <path d="M26 16L17 28H24L22 36L31 24H24L26 16Z" fill="#F59E0B" stroke="#F59E0B" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M26 16L17 28H24L22 36L31 24H24L26 15Z" fill="#F59E0B" stroke="#F59E0B" stroke-width="1.5" stroke-linejoin="round"/>
           </svg>
         </div>
         <div class="flex flex-col">
@@ -156,7 +161,7 @@
       </a>
 
       <!-- Menú de Navegación Desktop -->
-      <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-600">
+      <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold text-slate-600">
         <a href="#inicio" class="hover:text-sky-600 transition">Inicio</a>
         <a href="#servicios" class="hover:text-sky-600 transition">Servicios</a>
         <a href="#agendar" class="hover:text-sky-600 transition font-bold text-emerald-600 flex items-center gap-1">
@@ -167,15 +172,23 @@
         <a href="#faq" class="hover:text-sky-600 transition">Preguntas Frecuentes</a>
       </nav>
 
-      <!-- CTA Rápido WhatsApp -->
-      <div class="flex items-center gap-3">
+      <!-- CTAs de Contacto: Botón Rojo de Llamar + Botón WhatsApp -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Botón Rojo de Llamada Telefónica Directa -->
+        <a href="tel:1178232233" 
+           class="bg-red-600 hover:bg-red-700 text-white px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold flex items-center gap-1.5 shadow-sm shadow-red-600/20 transition transform hover:-translate-y-0.5">
+          <span>📞</span>
+          <span>Llamar</span>
+        </a>
+
+        <!-- Botón Verde WhatsApp -->
         <a href="https://wa.me/5491178232233?text=Hola%20Electricista%20de%20Barrio,%20quisiera%20hacer%20una%20consulta." 
            target="_blank" rel="noopener noreferrer"
-           class="bg-brand-waGreen hover:bg-brand-waHover text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold flex items-center gap-2 shadow-sm shadow-green-600/20 transition transform hover:-translate-y-0.5">
+           class="bg-brand-waGreen hover:bg-brand-waHover text-white px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold flex items-center gap-2 shadow-sm shadow-green-600/20 transition transform hover:-translate-y-0.5">
           <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
           </svg>
-          <span>WhatsApp</span>
+          <span class="hidden sm:inline">WhatsApp</span>
         </a>
       </div>
 
@@ -209,23 +222,26 @@
 
           <!-- Acciones Principales -->
           <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto pt-2">
-            <a href="#agendar" 
-               class="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3.5 rounded-xl font-bold text-sm sm:text-base flex items-center justify-center gap-2.5 shadow-md shadow-emerald-700/20 transition transform hover:-translate-y-0.5 text-center">
-              <span>🗓️ Agendar una Visita</span>
+            <!-- Botón Rojo Destacado para Llamar Directamente -->
+            <a href="tel:1178232233" 
+               class="bg-red-600 hover:bg-red-700 text-white px-6 py-3.5 rounded-xl font-bold text-sm sm:text-base flex items-center justify-center gap-2 shadow-md shadow-red-600/25 transition transform hover:-translate-y-0.5 text-center">
+              <span>📞 Llamar: 11 7823-2233</span>
             </a>
 
+            <!-- Botón de Agendar Turno -->
+            <a href="#agendar" 
+               class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-3.5 rounded-xl font-bold text-sm sm:text-base flex items-center justify-center gap-2 shadow-md shadow-emerald-700/20 transition transform hover:-translate-y-0.5 text-center">
+              <span>🗓️ Agendar Visita</span>
+            </a>
+
+            <!-- Botón Verde WhatsApp -->
             <a href="https://wa.me/5491178232233?text=Hola%20Electricista%20de%20Barrio,%20quisiera%20consultar%20por%20un%20trabajo%20el%C3%A9ctrico."
                target="_blank" rel="noopener noreferrer"
-               class="bg-brand-waGreen hover:bg-brand-waHover text-white px-6 py-3.5 rounded-xl font-bold text-sm sm:text-base flex items-center justify-center gap-2 shadow-md transition transform hover:-translate-y-0.5 text-center">
+               class="bg-brand-waGreen hover:bg-brand-waHover text-white px-5 py-3.5 rounded-xl font-bold text-sm sm:text-base flex items-center justify-center gap-2 shadow-md transition transform hover:-translate-y-0.5 text-center">
               <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
                 <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
               </svg>
               <span>WhatsApp</span>
-            </a>
-
-            <a href="tel:1178232233" 
-               class="bg-slate-900 hover:bg-slate-800 text-white px-5 py-3.5 rounded-xl font-bold text-sm sm:text-base flex items-center justify-center gap-2 shadow-md transition transform hover:-translate-y-0.5 text-center">
-              <span>🚨 Urgencias 24 hs</span>
             </a>
           </div>
 
@@ -499,7 +515,7 @@
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-emerald-600 font-bold">✓</span>
-                  <span><strong>Instalación de luminarias LED</strong> y ventiladores de techo.</span>
+                  <span><strong>Instalación de luminarias LED</strong> y tomas corrientes.</span>
                 </li>
               </ul>
             </div>
@@ -1052,7 +1068,7 @@
   </section>
 
   <!-- ==========================================================================
-       9. Preguntas Frecuentes (Acordeón Completo)
+       9. Preguntas Frecuentes (Acordeón Actualizado)
        ========================================================================== -->
   <section id="faq" class="py-16 sm:py-24 bg-white border-t border-slate-200/70">
     <div class="max-w-4xl mx-auto px-4">
@@ -1063,7 +1079,7 @@
           Preguntas Frecuentes
         </h2>
         <p class="text-slate-600 text-sm sm:text-base mt-2">
-          Respuestas transparentes sobre visitas, presupuestos y cómo trabajamos en tu barrio.
+          Respuestas claras sobre visitas, presupuestos y cómo trabajamos en tu barrio.
         </p>
       </div>
 
@@ -1094,17 +1110,6 @@
         <!-- Pregunta 3 -->
         <div class="border border-slate-200 rounded-2xl overflow-hidden bg-slate-50/50">
           <button type="button" onclick="toggleFaq(this)" class="w-full p-5 text-left font-bold text-slate-900 flex justify-between items-center hover:bg-slate-100/60 transition text-sm sm:text-base">
-            <span>¿Cómo es el tema del presupuesto? ¿Hay costos ocultos?</span>
-            <span class="text-sky-600 text-xl font-mono">+</span>
-          </button>
-          <div class="faq-content hidden p-5 pt-0 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 bg-white">
-            Para trabajos programados te brindamos un <strong>presupuesto previo honesto y sin sorpresas</strong>. Si se requiere una visita previa para diagnosticar una falla compleja, te informamos con total claridad antes de acudir. Solo pagás por lo que realmente se hace.
-          </div>
-        </div>
-
-        <!-- Pregunta 4 -->
-        <div class="border border-slate-200 rounded-2xl overflow-hidden bg-slate-50/50">
-          <button type="button" onclick="toggleFaq(this)" class="w-full p-5 text-left font-bold text-slate-900 flex justify-between items-center hover:bg-slate-100/60 transition text-sm sm:text-base">
             <span>¿Por qué salta el disyuntor y no puedo rearmarlo?</span>
             <span class="text-sky-600 text-xl font-mono">+</span>
           </button>
@@ -1113,7 +1118,7 @@
           </div>
         </div>
 
-        <!-- Pregunta 5 -->
+        <!-- Pregunta 4 -->
         <div class="border border-slate-200 rounded-2xl overflow-hidden bg-slate-50/50">
           <button type="button" onclick="toggleFaq(this)" class="w-full p-5 text-left font-bold text-slate-900 flex justify-between items-center hover:bg-slate-100/60 transition text-sm sm:text-base">
             <span>¿Es obligatoria la jabalina (puesta a tierra) en CABA?</span>
@@ -1124,36 +1129,25 @@
           </div>
         </div>
 
-        <!-- Pregunta 6 -->
-        <div class="border border-slate-200 rounded-2xl overflow-hidden bg-slate-50/50">
-          <button type="button" onclick="toggleFaq(this)" class="w-full p-5 text-left font-bold text-slate-900 flex justify-between items-center hover:bg-slate-100/60 transition text-sm sm:text-base">
-            <span>¿Realizan inspecciones técnicas para nuevo medidor o pilar de luz?</span>
-            <span class="text-sky-600 text-xl font-mono">+</span>
-          </button>
-          <div class="faq-content hidden p-5 pt-0 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 bg-white">
-            Para solicitar un nuevo medidor o reconexión, las distribuidoras exigen que la instalación y el pilar cumplan con las normativas vigentes. Realizamos la inspección técnica previa y las adecuaciones necesarias en la instalación para que quede en condiciones reglamentarias.
-          </div>
-        </div>
-
-        <!-- Pregunta 7 -->
+        <!-- Pregunta 5 -->
         <div class="border border-slate-200 rounded-2xl overflow-hidden bg-slate-50/50">
           <button type="button" onclick="toggleFaq(this)" class="w-full p-5 text-left font-bold text-slate-900 flex justify-between items-center hover:bg-slate-100/60 transition text-sm sm:text-base">
             <span>¿Qué materiales utilizan en las reparaciones e instalaciones?</span>
             <span class="text-sky-600 text-xl font-mono">+</span>
           </button>
           <div class="faq-content hidden p-5 pt-0 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 bg-white">
-            Trabajamos exclusivamente con <strong>materiales homologados con sello IRAM y bajo normativa AEA</strong> (Schneider, Siemens, Prysmian, Kalop, Jeluz, etc.). Evitamos materiales de segunda calidad que puedan provocar recalentamientos o fallas prematuras.
+            Trabajamos exclusivamente con <strong>materiales y componentes homologados bajo normas de seguridad AEA y certificación IRAM</strong> para garantizar una instalación segura, confiable y duradera.
           </div>
         </div>
 
-        <!-- Pregunta 8 -->
+        <!-- Pregunta 6 -->
         <div class="border border-slate-200 rounded-2xl overflow-hidden bg-slate-50/50">
           <button type="button" onclick="toggleFaq(this)" class="w-full p-5 text-left font-bold text-slate-900 flex justify-between items-center hover:bg-slate-100/60 transition text-sm sm:text-base">
-            <span>¿Realizan factura para consorcios o locales comerciales?</span>
+            <span>¿Emiten factura por los trabajos realizados?</span>
             <span class="text-sky-600 text-xl font-mono">+</span>
           </button>
           <div class="faq-content hidden p-5 pt-0 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 bg-white">
-            <strong>Sí, realizamos factura.</strong> Emitimos comprobantes tanto para particulares como para administraciones de consorcios (liquidación de expensas) y comercios.
+            <strong>Sí, realizamos factura por todos nuestros servicios</strong> tanto para clientes particulares como para administraciones de consorcios y locales comerciales.
           </div>
         </div>
 
@@ -1189,7 +1183,7 @@
             <p><strong>Teléfono / Urgencias:</strong> <a href="tel:1178232233" class="text-white hover:underline">11 7823-2233</a></p>
             <p><strong>WhatsApp:</strong> <a href="https://wa.me/5491178232233" target="_blank" class="text-emerald-400 hover:underline">+54 9 11 7823-2233</a></p>
             <p><strong>Horarios:</strong> Lunes a Sábados 8:00 a 19:00 hs · <span class="text-red-400 font-bold">Guardias 24 hs</span></p>
-            <p><strong>Cobertura:</strong> Los 48 barrios oficiales de CABA y Gran Buenos Aires.</p>
+            <p><strong>Cobertura:</strong> Los 48 barrios de CABA y Gran Buenos Aires.</p>
           </div>
         </div>
 
