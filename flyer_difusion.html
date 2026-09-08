@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electricista de Barrio - Tarjeta Gráfica de Difusión</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"Space Grotesk"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              dark: '#0F172A',
+              slate: '#1E293B',
+              blue: '#0284C7',
+              blueDark: '#0369A1',
+              blueLight: '#E0F2FE',
+              amber: '#F59E0B',
+              waGreen: '#16A34A',
+              waHover: '#15803D',
+              urgency: '#DC2626',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .pattern-grid {
+      background-image: radial-gradient(rgba(2, 132, 199, 0.08) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.25); }
+    }
+    .pulse-glow {
+      animation: pulse-dot 1.6s infinite ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-3 sm:p-6 text-slate-800 antialiased">
+
+  <!-- Contenedor Flyer / Tarjeta de Difusión -->
+  <div id="flyer-card" class="w-full max-w-[460px] bg-white border border-slate-200/90 rounded-3xl overflow-hidden shadow-2xl relative">
+    
+    <!-- 1. Tira Superior de Rápida Atención -->
+    <div class="bg-red-600 text-white text-xs font-bold py-2.5 px-4 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-white pulse-glow inline-block flex-shrink-0"></span>
+        <span class="tracking-tight">RÁPIDA ATENCIÓN EN TU BARRIO</span>
+      </div>
+      <span class="font-mono text-[11px] bg-red-700 px-2 py-0.5 rounded text-white font-bold">CABA Y GBA</span>
+    </div>
+
+    <!-- 2. Cuerpo Principal -->
+    <div class="p-6 sm:p-7 bg-gradient-to-b from-slate-50 via-white to-white pattern-grid">
+      
+      <!-- Encabezado / Logotipo -->
+      <div class="flex items-center justify-between pb-5 border-b border-slate-100">
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 bg-slate-900 text-amber-400 rounded-xl flex items-center justify-center font-mono font-bold text-xl shadow-sm">
+            🏡⚡
+          </div>
+          <div>
+            <div class="font-extrabold text-xl tracking-tight text-slate-900 leading-none">
+              ELECTRICISTA <span class="text-sky-600">DE BARRIO</span>
+            </div>
+            <span class="text-[10px] font-bold tracking-wider text-slate-500 uppercase mt-0.5 block">
+              Tu Vecino de Confianza · CABA y GBA
+            </span>
+          </div>
+        </div>
+        <span class="text-[11px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full">
+          🗓️ Turnos
+        </span>
+      </div>
+
+      <!-- Titular Especial Exacto -->
+      <div class="mt-5 space-y-2">
+        <div class="inline-flex items-center gap-1.5 bg-sky-50 border border-sky-200 text-sky-800 px-3 py-1 rounded-full text-xs font-semibold">
+          <span class="text-sky-600 font-bold">●</span>
+          <span>Cobertura en los 48 barrios de Buenos Aires</span>
+        </div>
+        <h1 class="text-2xl sm:text-[25px] font-extrabold tracking-tight text-slate-900 leading-tight">
+          Electricista de confianza en tu barrio.<br />
+          <span class="text-sky-600 font-bold">Trabajo profesional, presupuestos honestos.</span>
+        </h1>
+        <p class="text-xs sm:text-[13px] text-slate-600 leading-relaxed font-medium">
+          Rápida atención o visitas programadas para <strong class="text-slate-900">viviendas, comercios y consorcios</strong> con factura oficial.
+        </p>
+      </div>
+
+      <!-- 3. Servicios -->
+      <div class="mt-5 space-y-2.5">
+        
+        <div class="bg-white border border-slate-200 rounded-xl p-3 flex items-start gap-3 shadow-xs">
+          <span class="w-7 h-7 rounded-lg bg-red-50 text-red-600 font-mono font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
+            01
+          </span>
+          <div class="text-xs">
+            <strong class="text-slate-900 font-bold block text-[13px]">Urgencias y Reparaciones</strong>
+            <span class="text-slate-500 text-[11px] leading-snug block">Cortocircuitos, salto de térmicas y solución de fallas en el día.</span>
+          </div>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-xl p-3 flex items-start gap-3 shadow-xs">
+          <span class="w-7 h-7 rounded-lg bg-sky-50 text-sky-600 font-mono font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
+            02
+          </span>
+          <div class="text-xs">
+            <strong class="text-slate-900 font-bold block text-[13px]">Tableros e Instalaciones</strong>
+            <span class="text-slate-500 text-[11px] leading-snug block">Adecuación bajo normas AEA, recableados y luminarias LED.</span>
+          </div>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-xl p-3 flex items-start gap-3 shadow-xs">
+          <span class="w-7 h-7 rounded-lg bg-slate-100 text-slate-700 font-mono font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
+            03
+          </span>
+          <div class="text-xs">
+            <strong class="text-slate-900 font-bold block text-[13px]">Consorcios y Comercios</strong>
+            <span class="text-slate-500 text-[11px] leading-snug block">Mantenimiento de espacios comunes y locales con factura.</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 4. Tira de Credenciales Monospace -->
+      <div class="mt-5 grid grid-cols-3 gap-2 text-center">
+        <div class="bg-slate-50 border border-slate-200/80 rounded-xl py-2 px-1">
+          <span class="font-mono text-xs font-bold text-sky-600 block leading-tight">AEA</span>
+          <span class="text-[10px] font-semibold text-slate-600 block">Norma Vigente</span>
+        </div>
+        <div class="bg-slate-50 border border-slate-200/80 rounded-xl py-2 px-1">
+          <span class="font-mono text-xs font-bold text-sky-600 block leading-tight">IRAM</span>
+          <span class="text-[10px] font-semibold text-slate-600 block">Material Aprobado</span>
+        </div>
+        <div class="bg-slate-50 border border-slate-200/80 rounded-xl py-2 px-1">
+          <span class="font-mono text-xs font-bold text-emerald-600 block leading-tight">FACTURA</span>
+          <span class="text-[10px] font-semibold text-slate-600 block">Comprobante</span>
+        </div>
+      </div>
+
+      <!-- 5. Bloque de Contacto WhatsApp con QR y Botón -->
+      <div class="mt-5 bg-gradient-to-br from-emerald-50 via-white to-sky-50 border-2 border-emerald-500/40 rounded-2xl p-4 flex items-center gap-3.5 shadow-sm">
+        
+        <!-- QR Dinámico a WhatsApp -->
+        <div class="bg-white p-2 rounded-xl border border-emerald-200 shadow-sm flex-shrink-0 text-center">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=110x110&data=https%3A%2F%2Fwa.me%2F5491178232233%3Ftext%3DHola%20Electricista%20de%20Barrio%2C%20quisiera%20consultar%20por%20un%20trabajo%20el%C3%A9ctrico%20en%20mi%20zona." 
+               alt="QR WhatsApp Electricista de Barrio" 
+               class="w-18 h-18 sm:w-20 sm:h-20 block rounded" />
+          <span class="block text-[8px] font-extrabold text-slate-700 mt-1 tracking-tighter uppercase">Escanear QR</span>
+        </div>
+
+        <!-- Botón & Info -->
+        <div class="flex-1 min-w-0">
+          <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-700 block mb-1">
+            Presupuestos y Visitas
+          </span>
+          <a href="https://wa.me/5491178232233?text=Hola%20Electricista%20de%20Barrio,%20quisiera%20consultar%20por%20un%20trabajo%20el%C3%A9ctrico%20en%20mi%20zona." 
+             target="_blank"
+             class="bg-brand-waGreen hover:bg-brand-waHover text-white font-extrabold text-xs sm:text-sm py-2.5 px-3 rounded-xl flex items-center justify-center gap-2 shadow-sm shadow-emerald-700/20 transition transform hover:-translate-y-0.5">
+            <svg class="w-4 h-4 fill-current flex-shrink-0" viewBox="0 0 24 24">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+            </svg>
+            <span>11 7823-2233</span>
+          </a>
+          <p class="text-[10px] text-slate-500 mt-1 font-medium leading-tight">
+            Tocá el botón o escaneá el QR para escribirnos por WhatsApp.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- 6. Pie de Página del Flyer -->
+    <div class="bg-slate-900 text-white px-5 py-3 flex items-center justify-between text-[11px] font-semibold">
+      <span class="text-sky-400 font-mono">electricistadebarrio.com.ar</span>
+      <span class="text-slate-300">48 Barrios de CABA y GBA</span>
+    </div>
+
+  </div>
+
+</body>
+</html>
