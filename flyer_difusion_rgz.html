@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RGZ Soluciones - Tarjeta Gráfica de Difusión</title>
+  <meta property="og:title" content="RGZ Soluciones ⚡ Servicios Integrales & Mantenimiento">
+  <meta property="og:description" content="Soluciones técnicas profesionales para hogares, consorcios y empresas en CABA y GBA. Presupuestos transparentes y factura.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"Space Grotesk"', 'monospace'],
+          },
+          colors: {
+            rgz: {
+              navy: '#0B132B',
+              dark: '#1C2541',
+              blue: '#3A86FF',
+              cyan: '#48CAE4',
+              wa: '#16A34A',
+              waHover: '#15803D',
+              accent: '#F77F00'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .pattern-dots {
+      background-image: radial-gradient(rgba(58, 134, 255, 0.12) 1px, transparent 1px);
+      background-size: 18px 18px;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.25); }
+    }
+    .pulse-glow {
+      animation: pulse-dot 1.6s infinite ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-slate-900 min-h-screen flex items-center justify-center p-3 sm:p-6 text-slate-800 antialiased font-sans">
+
+  <!-- Contenedor Tarjeta / Flyer RGZ Soluciones -->
+  <div id="flyer-rgz" class="w-full max-w-[460px] bg-white border border-slate-700/60 rounded-3xl overflow-hidden shadow-2xl relative">
+    
+    <!-- 1. Tira Superior Corporativa -->
+    <div class="bg-gradient-to-r from-rgz-navy via-rgz-dark to-slate-900 text-white text-xs font-bold py-2.5 px-4 flex items-center justify-between border-b border-slate-700">
+      <div class="flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 pulse-glow inline-block flex-shrink-0"></span>
+        <span class="tracking-tight text-slate-200">SOLUCIONES INTEGRALES & MANTENIMIENTO</span>
+      </div>
+      <a href="https://wa.me/5491178232233?text=Hola%20RGZ%20Soluciones%2C%20quisiera%20consultar%20por%20un%20servicio%20t%C3%A9cnico%20%2F%20presupuesto." 
+         target="_blank" 
+         class="font-mono text-[11px] bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-400/40 px-2 py-0.5 rounded font-extrabold flex items-center gap-1 transition">
+        <span>📱 11 7823-2233</span>
+      </a>
+    </div>
+
+    <!-- 2. Cuerpo Principal -->
+    <div class="p-6 sm:p-7 bg-gradient-to-b from-slate-50 via-white to-white pattern-dots">
+      
+      <!-- Encabezado / Identidad Visual RGZ Soluciones -->
+      <div class="flex items-center justify-between pb-5 border-b border-slate-200/80">
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 bg-gradient-to-br from-rgz-navy to-rgz-dark rounded-2xl flex items-center justify-center flex-shrink-0 shadow-md border border-slate-700">
+            <span class="font-mono font-black text-xl text-white tracking-tighter">
+              RG<span class="text-rgz-cyan">Z</span>
+            </span>
+          </div>
+          <div>
+            <div class="font-black text-xl tracking-tight text-slate-900 leading-none">
+              RGZ <span class="text-rgz-blue font-extrabold">SOLUCIONES</span>
+            </div>
+            <span class="text-[10px] font-bold tracking-wider text-slate-500 uppercase mt-0.5 block">
+              Servicios Técnicos & Mantenimiento
+            </span>
+          </div>
+        </div>
+        <span class="text-[11px] font-bold text-slate-700 bg-slate-100 border border-slate-200 px-2.5 py-1 rounded-full">
+          🏢 Profesional
+        </span>
+      </div>
+
+      <!-- Titular Principal -->
+      <div class="mt-5 space-y-2">
+        <div class="inline-flex items-center gap-1.5 bg-blue-50 border border-blue-200 text-blue-800 px-3 py-1 rounded-full text-xs font-semibold">
+          <span class="text-rgz-blue font-bold">●</span>
+          <span>Hogares · Consorcios · Locales Comerciales</span>
+        </div>
+        <h1 class="text-2xl sm:text-[25px] font-extrabold tracking-tight text-slate-900 leading-tight">
+          Soluciones técnicas confiables.<br />
+          <span class="text-rgz-blue font-bold">Diagnóstico certero y respuesta profesional.</span>
+        </h1>
+        <p class="text-xs sm:text-[13px] text-slate-600 leading-relaxed font-medium">
+          Mantenimiento correctivo y preventivo, obras, tableros y adecuaciones bajo normativas vigentes con emisión de factura.
+        </p>
+      </div>
+
+      <!-- 3. Los 4 Servicios Principales -->
+      <div class="mt-4 space-y-2">
+        
+        <div class="bg-white border border-slate-200 rounded-xl p-2.5 flex items-start gap-2.5 shadow-xs hover:border-rgz-blue transition">
+          <span class="w-6 h-6 rounded-md bg-red-50 text-red-600 font-mono font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
+            01
+          </span>
+          <div class="text-xs">
+            <strong class="text-slate-900 font-bold block text-xs">Urgencias y Reparaciones</strong>
+            <span class="text-slate-500 text-[10.5px] leading-tight block">Detección de fallas, cortocircuitos y restablecimiento de servicio.</span>
+          </div>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-xl p-2.5 flex items-start gap-2.5 shadow-xs hover:border-rgz-blue transition">
+          <span class="w-6 h-6 rounded-md bg-blue-50 text-rgz-blue font-mono font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
+            02
+          </span>
+          <div class="text-xs">
+            <strong class="text-slate-900 font-bold block text-xs">Tableros e Instalaciones</strong>
+            <span class="text-slate-500 text-[10.5px] leading-tight block">Armado, normalización bajo normas AEA y recableados integrales.</span>
+          </div>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-xl p-2.5 flex items-start gap-2.5 shadow-xs hover:border-rgz-blue transition">
+          <span class="w-6 h-6 rounded-md bg-slate-100 text-slate-700 font-mono font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
+            03
+          </span>
+          <div class="text-xs">
+            <strong class="text-slate-900 font-bold block text-xs">Mantenimiento de Consorcios</strong>
+            <span class="text-slate-500 text-[10.5px] leading-tight block">Espacios comunes, palieres, iluminación y mantenimiento preventivo.</span>
+          </div>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-xl p-2.5 flex items-start gap-2.5 shadow-xs hover:border-rgz-blue transition">
+          <span class="w-6 h-6 rounded-md bg-emerald-50 text-emerald-700 font-mono font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
+            04
+          </span>
+          <div class="text-xs">
+            <strong class="text-slate-900 font-bold block text-xs">Comercios y Empresas</strong>
+            <span class="text-slate-500 text-[10.5px] leading-tight block">Proyectos a medida, luminarias LED y soporte técnico continuo.</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 4. Tira de Credenciales -->
+      <div class="mt-4 grid grid-cols-3 gap-2 text-center">
+        <div class="bg-slate-50 border border-slate-200 rounded-xl py-2 px-1">
+          <span class="font-mono text-xs font-bold text-rgz-blue block leading-tight">NORMATIVA</span>
+          <span class="text-[10px] font-semibold text-slate-600 block">Normas AEA</span>
+        </div>
+        <div class="bg-slate-50 border border-slate-200 rounded-xl py-2 px-1">
+          <span class="font-mono text-xs font-bold text-rgz-blue block leading-tight">HOMOLOGADO</span>
+          <span class="text-[10px] font-semibold text-slate-600 block">Material IRAM</span>
+        </div>
+        <div class="bg-slate-50 border border-slate-200 rounded-xl py-2 px-1">
+          <span class="font-mono text-xs font-bold text-emerald-600 block leading-tight">FACTURACIÓN</span>
+          <span class="text-[10px] font-semibold text-slate-600 block">Comprobante</span>
+        </div>
+      </div>
+
+      <!-- 5. Bloque de Contacto Directo con WhatsApp Destacado y QR -->
+      <div class="mt-5 bg-gradient-to-br from-emerald-50 via-emerald-100/40 to-sky-50 border-2 border-emerald-500 rounded-2xl p-4 sm:p-5 shadow-md">
+        
+        <!-- Encabezado de Contacto -->
+        <div class="flex items-center justify-between mb-3">
+          <span class="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-emerald-900">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            Contacto Directo & Presupuestos
+          </span>
+          <span class="text-[10px] font-bold bg-white text-emerald-800 px-2 py-0.5 rounded-md border border-emerald-300">
+            Atención Inmediata
+          </span>
+        </div>
+
+        <div class="flex items-center gap-3.5">
+          <!-- QR Dinámico a WhatsApp -->
+          <div class="bg-white p-2 rounded-xl border border-emerald-300 shadow-sm flex-shrink-0 text-center">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=110x110&data=https%3A%2F%2Fwa.me%2F5491178232233%3Ftext%3DHola%20RGZ%20Soluciones%2C%20quisiera%20consultar%20por%20un%20servicio%20t%C3%A9cnico%20%2F%20presupuesto." 
+                 alt="QR WhatsApp RGZ Soluciones" 
+                 class="w-18 h-18 sm:w-20 sm:h-20 block rounded" />
+            <span class="block text-[8px] font-extrabold text-slate-700 mt-1 tracking-tighter uppercase">Escanear QR</span>
+          </div>
+
+          <!-- Botón & Número Destacado -->
+          <div class="flex-1 min-w-0 flex flex-col justify-center gap-2">
+            
+            <!-- Botón Grande WhatsApp -->
+            <a href="https://wa.me/5491178232233?text=Hola%20RGZ%20Soluciones,%20quisiera%20consultar%20por%20un%20servicio%20t%C3%A9cnico%20/%20presupuesto." 
+               target="_blank"
+               class="bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-black text-sm sm:text-base py-3 px-3.5 rounded-xl flex items-center justify-center gap-2.5 shadow-lg shadow-emerald-700/30 transition transform hover:-translate-y-0.5 border border-emerald-500">
+              <svg class="w-5 h-5 fill-current flex-shrink-0 text-white" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+              </svg>
+              <span class="tracking-wide">11 7823-2233</span>
+            </a>
+
+            <!-- Subtítulo Aclaratorio -->
+            <p class="text-[11px] text-emerald-950 font-bold leading-tight text-center sm:text-left">
+              💬 Escribinos directo por WhatsApp para coordinar visita o presupuesto.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- 6. Pie de Página del Flyer -->
+    <div class="bg-rgz-navy text-white px-5 py-3 flex items-center justify-between text-[11px] font-semibold border-t border-slate-800">
+      <span class="text-rgz-cyan font-mono font-bold">RGZ Soluciones</span>
+      <span class="text-slate-300">WhatsApp: <strong class="text-emerald-400 font-mono font-bold">11 7823-2233</strong></span>
+    </div>
+
+  </div>
+
+</body>
+</html>

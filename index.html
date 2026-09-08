@@ -155,7 +155,7 @@
             ELECTRICISTA <span class="text-sky-600">DE BARRIO</span>
           </span>
           <span class="text-[10px] sm:text-xs font-bold tracking-wider text-slate-500 uppercase mt-0.5">
-            Tu Vecino de Confianza · CABA y GBA
+            Tu Vecino de Confianza
           </span>
         </div>
       </a>
@@ -598,7 +598,7 @@
             <label class="block text-xs font-mono uppercase font-bold text-slate-500 tracking-wider mb-3">
               1. Seleccioná el día para la visita:
             </label>
-            <div id="bookingDaysContainer" class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+            <div id="bookingDaysContainer" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2.5">
               <!-- Los días se generan dinámicamente con JavaScript -->
             </div>
             <input type="hidden" id="selectedBookingDate" value="" />
@@ -610,33 +610,9 @@
               2. Elegí la franja horaria disponible:
             </label>
             <div id="bookingSlotsContainer" class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              
-              <button type="button" onclick="selectSlot('Mañana (09:00 a 12:00 hs)', this)" class="slot-btn border-2 border-slate-200 bg-white p-3.5 rounded-2xl text-left hover:border-sky-500 hover:bg-sky-50/50 transition flex items-center justify-between group">
-                <div>
-                  <strong class="text-xs sm:text-sm text-slate-900 block group-hover:text-sky-700">🌅 Franja Mañana</strong>
-                  <span class="text-[11px] text-slate-500">09:00 a 12:00 hs</span>
-                </div>
-                <span class="text-xs text-emerald-600 font-bold bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-md">Disponible</span>
-              </button>
-
-              <button type="button" onclick="selectSlot('Mediodía / Siesta (12:00 a 15:00 hs)', this)" class="slot-btn border-2 border-slate-200 bg-white p-3.5 rounded-2xl text-left hover:border-sky-500 hover:bg-sky-50/50 transition flex items-center justify-between group">
-                <div>
-                  <strong class="text-xs sm:text-sm text-slate-900 block group-hover:text-sky-700">☀️ Franja Mediodía</strong>
-                  <span class="text-[11px] text-slate-500">12:00 a 15:00 hs</span>
-                </div>
-                <span class="text-xs text-emerald-600 font-bold bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-md">Disponible</span>
-              </button>
-
-              <button type="button" onclick="selectSlot('Tarde (15:00 a 18:30 hs)', this)" class="slot-btn border-2 border-slate-200 bg-white p-3.5 rounded-2xl text-left hover:border-sky-500 hover:bg-sky-50/50 transition flex items-center justify-between group">
-                <div>
-                  <strong class="text-xs sm:text-sm text-slate-900 block group-hover:text-sky-700">🌇 Franja Tarde</strong>
-                  <span class="text-[11px] text-slate-500">15:00 a 18:30 hs</span>
-                </div>
-                <span class="text-xs text-emerald-600 font-bold bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-md">Disponible</span>
-              </button>
-
+              <!-- Las franjas horarias se generan dinámicamente según AGENDA_CONFIG -->
             </div>
-            <input type="hidden" id="selectedBookingSlot" value="Mañana (09:00 a 12:00 hs)" />
+            <input type="hidden" id="selectedBookingSlot" value="" />
           </div>
 
           <!-- Paso 3: Datos de contacto y ubicación (Opcionales) -->
@@ -779,274 +755,484 @@
   </section>
 
   <!-- ==========================================================================
-       8. Mapa Interactivo y Guía de los 48 Barrios de CABA (15 Comunas)
+       8. Cobertura y Directorio Interactivo de los 48 Barrios de CABA
        ========================================================================== -->
   <section id="barrios" class="py-16 sm:py-24 bg-slate-50/70 border-t border-slate-200/70">
     <div class="max-w-6xl mx-auto px-4">
       
-      <div class="text-center max-w-3xl mx-auto mb-12">
+      <div class="text-center max-w-3xl mx-auto mb-10">
         <span class="text-xs font-mono uppercase font-bold tracking-widest text-sky-700 bg-sky-100 border border-sky-200 px-3 py-1 rounded-md inline-block mb-3">COBERTURA TOTAL CABA</span>
         <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
           Llegamos a los 48 Barrios de la Ciudad de Buenos Aires
         </h2>
         <p class="text-slate-600 text-sm sm:text-base mt-2">
-          Hacé clic en tu barrio o buscalo para solicitar un electricista directo por WhatsApp con tu zona ya identificada.
+          Elegí tu barrio o buscalo para iniciar una consulta directa por WhatsApp con tu zona ya identificada.
         </p>
       </div>
 
       <!-- Buscador dinámico de barrios en tiempo real -->
-      <div class="max-w-md mx-auto mb-8">
+      <div class="max-w-md mx-auto mb-6">
         <div class="relative">
-          <input type="text" id="neighborhoodSearch" placeholder="🔍 Buscá tu barrio (ej: Palermo, Caballito, Devoto...)" 
-                 class="w-full bg-white border-2 border-slate-300/80 rounded-2xl px-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-sky-500 shadow-sm transition" />
-          <button type="button" onclick="document.getElementById('neighborhoodSearch').value=''; filterNeighborhoodsLive();" class="absolute right-3 top-3 text-xs text-slate-400 hover:text-slate-600 font-bold">
+          <input type="text" id="neighborhoodSearch" placeholder="🔍 Buscá tu barrio (ej: Palermo, Devoto, Caballito, Almagro...)" 
+                 class="w-full bg-white border-2 border-slate-300/80 rounded-2xl px-4 py-3 text-xs sm:text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-sky-500 shadow-sm transition" />
+          <button type="button" onclick="document.getElementById('neighborhoodSearch').value=''; filterNeighborhoodsLive();" class="absolute right-3.5 top-3 text-xs text-slate-400 hover:text-slate-600 font-bold">
             Limpiar
           </button>
         </div>
       </div>
 
-      <!-- Filtros por Comuna (Pestañas Rápidas) -->
-      <div class="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-4 mb-6 custom-scrollbar text-xs font-bold text-slate-600">
-        <button type="button" onclick="filterComuna('todas', this)" class="comuna-filter-btn active bg-sky-600 text-white px-3.5 py-1.5 rounded-full transition whitespace-nowrap shadow-xs">
+      <!-- Filtros por Zona Porteña -->
+      <div class="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-4 mb-8 custom-scrollbar text-xs font-bold text-slate-600">
+        <button type="button" onclick="filterComuna('todas', this)" class="comuna-filter-btn active bg-sky-600 text-white px-4 py-2 rounded-full transition whitespace-nowrap shadow-xs">
           Todos los Barrios (48)
         </button>
-        <button type="button" onclick="filterComuna('Norte', this)" class="comuna-filter-btn bg-white hover:bg-slate-100 border border-slate-200 px-3 py-1.5 rounded-full transition whitespace-nowrap">
+        <button type="button" onclick="filterComuna('Norte', this)" class="comuna-filter-btn bg-white hover:bg-slate-100 border border-slate-200 px-4 py-2 rounded-full transition whitespace-nowrap">
           Zona Norte
         </button>
-        <button type="button" onclick="filterComuna('Centro', this)" class="comuna-filter-btn bg-white hover:bg-slate-100 border border-slate-200 px-3 py-1.5 rounded-full transition whitespace-nowrap">
-          Centro & Almagro
+        <button type="button" onclick="filterComuna('Centro', this)" class="comuna-filter-btn bg-white hover:bg-slate-100 border border-slate-200 px-4 py-2 rounded-full transition whitespace-nowrap">
+          Zona Centro
         </button>
-        <button type="button" onclick="filterComuna('Oeste', this)" class="comuna-filter-btn bg-white hover:bg-slate-100 border border-slate-200 px-3 py-1.5 rounded-full transition whitespace-nowrap">
-          Caballito, Flores & Devoto
+        <button type="button" onclick="filterComuna('Oeste', this)" class="comuna-filter-btn bg-white hover:bg-slate-100 border border-slate-200 px-4 py-2 rounded-full transition whitespace-nowrap">
+          Zona Oeste
         </button>
-        <button type="button" onclick="filterComuna('Sur', this)" class="comuna-filter-btn bg-white hover:bg-slate-100 border border-slate-200 px-3 py-1.5 rounded-full transition whitespace-nowrap">
-          Zona Sur & San Telmo
+        <button type="button" onclick="filterComuna('Sur', this)" class="comuna-filter-btn bg-white hover:bg-slate-100 border border-slate-200 px-4 py-2 rounded-full transition whitespace-nowrap">
+          Zona Sur
         </button>
       </div>
 
-      <!-- Malla de los 48 Barrios con acción WhatsApp -->
+      <!-- Grilla Visual Limpia de los 48 Barrios (Orden Alfabético A-Z con Comuna) -->
       <div id="barriosGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2.5">
         
-        <!-- Comuna 1 -->
-        <button type="button" onclick="selectAndChatBarrio('Retiro')" data-comuna="Centro" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Retiro</span>
-          <span class="block text-[10px] text-slate-400">Comuna 1</span>
-        </button>
-        <button type="button" onclick="selectAndChatBarrio('San Nicolás')" data-comuna="Centro" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">San Nicolás</span>
-          <span class="block text-[10px] text-slate-400">Centro · Comuna 1</span>
-        </button>
-        <button type="button" onclick="selectAndChatBarrio('Puerto Madero')" data-comuna="Centro" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Puerto Madero</span>
-          <span class="block text-[10px] text-slate-400">Comuna 1</span>
-        </button>
-        <button type="button" onclick="selectAndChatBarrio('San Telmo')" data-comuna="Sur" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">San Telmo</span>
-          <span class="block text-[10px] text-slate-400">Comuna 1</span>
-        </button>
-        <button type="button" onclick="selectAndChatBarrio('Monserrat')" data-comuna="Centro" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Monserrat</span>
-          <span class="block text-[10px] text-slate-400">Comuna 1</span>
-        </button>
-        <button type="button" onclick="selectAndChatBarrio('Constitución')" data-comuna="Sur" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Constitución</span>
-          <span class="block text-[10px] text-slate-400">Comuna 1</span>
+        <!-- Agronomía -->
+        <button type="button" onclick="selectAndChatBarrio('Agronomía')" data-comuna="Centro" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Agronomía</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 15</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
         </button>
 
-        <!-- Comuna 2 -->
-        <button type="button" onclick="selectAndChatBarrio('Recoleta')" data-comuna="Norte" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Recoleta</span>
-          <span class="block text-[10px] text-slate-400">Comuna 2</span>
+        <!-- Almagro -->
+        <button type="button" onclick="selectAndChatBarrio('Almagro')" data-comuna="Centro" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Almagro</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 5</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
         </button>
 
-        <!-- Comuna 3 -->
-        <button type="button" onclick="selectAndChatBarrio('Balvanera')" data-comuna="Centro" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Balvanera (Once)</span>
-          <span class="block text-[10px] text-slate-400">Comuna 3</span>
-        </button>
-        <button type="button" onclick="selectAndChatBarrio('San Cristóbal')" data-comuna="Centro" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">San Cristóbal</span>
-          <span class="block text-[10px] text-slate-400">Comuna 3</span>
-        </button>
-
-        <!-- Comuna 4 -->
-        <button type="button" onclick="selectAndChatBarrio('La Boca')" data-comuna="Sur" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">La Boca</span>
-          <span class="block text-[10px] text-slate-400">Comuna 4</span>
-        </button>
-        <button type="button" onclick="selectAndChatBarrio('Barracas')" data-comuna="Sur" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Barracas</span>
-          <span class="block text-[10px] text-slate-400">Comuna 4</span>
-        </button>
-        <button type="button" onclick="selectAndChatBarrio('Parque Patricios')" data-comuna="Sur" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Parque Patricios</span>
-          <span class="block text-[10px] text-slate-400">Comuna 4</span>
-        </button>
-        <button type="button" onclick="selectAndChatBarrio('Nueva Pompeya')" data-comuna="Sur" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Nueva Pompeya</span>
-          <span class="block text-[10px] text-slate-400">Comuna 4</span>
+        <!-- Balvanera -->
+        <button type="button" onclick="selectAndChatBarrio('Balvanera')" data-comuna="Centro" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Balvanera (Once)</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 3</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
         </button>
 
-        <!-- Comuna 5 -->
-        <button type="button" onclick="selectAndChatBarrio('Almagro')" data-comuna="Centro" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Almagro</span>
-          <span class="block text-[10px] text-slate-400">Comuna 5</span>
-        </button>
-        <button type="button" onclick="selectAndChatBarrio('Boedo')" data-comuna="Centro" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Boedo</span>
-          <span class="block text-[10px] text-slate-400">Comuna 5</span>
-        </button>
-
-        <!-- Comuna 6 -->
-        <button type="button" onclick="selectAndChatBarrio('Caballito')" data-comuna="Oeste" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Caballito</span>
-          <span class="block text-[10px] text-slate-400">Comuna 6</span>
+        <!-- Barracas -->
+        <button type="button" onclick="selectAndChatBarrio('Barracas')" data-comuna="Sur" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Barracas</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 4</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
         </button>
 
-        <!-- Comuna 7 -->
-        <button type="button" onclick="selectAndChatBarrio('Flores')" data-comuna="Oeste" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Flores</span>
-          <span class="block text-[10px] text-slate-400">Comuna 7</span>
-        </button>
-        <button type="button" onclick="selectAndChatBarrio('Parque Chacabuco')" data-comuna="Oeste" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Parque Chacabuco</span>
-          <span class="block text-[10px] text-slate-400">Comuna 7</span>
-        </button>
-
-        <!-- Comuna 8 -->
-        <button type="button" onclick="selectAndChatBarrio('Villa Soldati')" data-comuna="Sur" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Villa Soldati</span>
-          <span class="block text-[10px] text-slate-400">Comuna 8</span>
-        </button>
-        <button type="button" onclick="selectAndChatBarrio('Villa Riachuelo')" data-comuna="Sur" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Villa Riachuelo</span>
-          <span class="block text-[10px] text-slate-400">Comuna 8</span>
-        </button>
-        <button type="button" onclick="selectAndChatBarrio('Villa Lugano')" data-comuna="Sur" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Villa Lugano</span>
-          <span class="block text-[10px] text-slate-400">Comuna 8</span>
+        <!-- Belgrano -->
+        <button type="button" onclick="selectAndChatBarrio('Belgrano')" data-comuna="Norte" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Belgrano</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 13</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
         </button>
 
-        <!-- Comuna 9 -->
-        <button type="button" onclick="selectAndChatBarrio('Liniers')" data-comuna="Oeste" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Liniers</span>
-          <span class="block text-[10px] text-slate-400">Comuna 9</span>
-        </button>
-        <button type="button" onclick="selectAndChatBarrio('Mataderos')" data-comuna="Oeste" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Mataderos</span>
-          <span class="block text-[10px] text-slate-400">Comuna 9</span>
-        </button>
-        <button type="button" onclick="selectAndChatBarrio('Parque Avellaneda')" data-comuna="Oeste" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Parque Avellaneda</span>
-          <span class="block text-[10px] text-slate-400">Comuna 9</span>
+        <!-- Boedo -->
+        <button type="button" onclick="selectAndChatBarrio('Boedo')" data-comuna="Sur" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Boedo</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 5</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
         </button>
 
-        <!-- Comuna 10 -->
-        <button type="button" onclick="selectAndChatBarrio('Villa Real')" data-comuna="Oeste" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Villa Real</span>
-          <span class="block text-[10px] text-slate-400">Comuna 10</span>
-        </button>
-        <button type="button" onclick="selectAndChatBarrio('Monte Castro')" data-comuna="Oeste" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Monte Castro</span>
-          <span class="block text-[10px] text-slate-400">Comuna 10</span>
-        </button>
-        <button type="button" onclick="selectAndChatBarrio('Versalles')" data-comuna="Oeste" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Versalles</span>
-          <span class="block text-[10px] text-slate-400">Comuna 10</span>
-        </button>
-        <button type="button" onclick="selectAndChatBarrio('Floresta')" data-comuna="Oeste" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Floresta</span>
-          <span class="block text-[10px] text-slate-400">Comuna 10</span>
-        </button>
-        <button type="button" onclick="selectAndChatBarrio('Vélez Sarsfield')" data-comuna="Oeste" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Vélez Sarsfield</span>
-          <span class="block text-[10px] text-slate-400">Comuna 10</span>
-        </button>
-        <button type="button" onclick="selectAndChatBarrio('Villa Luro')" data-comuna="Oeste" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Villa Luro</span>
-          <span class="block text-[10px] text-slate-400">Comuna 10</span>
+        <!-- Caballito -->
+        <button type="button" onclick="selectAndChatBarrio('Caballito')" data-comuna="Centro" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Caballito</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 6</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
         </button>
 
-        <!-- Comuna 11 -->
-        <button type="button" onclick="selectAndChatBarrio('Villa General Mitre')" data-comuna="Oeste" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Villa Gral. Mitre</span>
-          <span class="block text-[10px] text-slate-400">Comuna 11</span>
-        </button>
-        <button type="button" onclick="selectAndChatBarrio('Villa Devoto')" data-comuna="Oeste" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Villa Devoto</span>
-          <span class="block text-[10px] text-slate-400">Comuna 11</span>
-        </button>
-        <button type="button" onclick="selectAndChatBarrio('Villa del Parque')" data-comuna="Oeste" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Villa del Parque</span>
-          <span class="block text-[10px] text-slate-400">Comuna 11</span>
-        </button>
-        <button type="button" onclick="selectAndChatBarrio('Villa Santa Rita')" data-comuna="Oeste" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Villa Santa Rita</span>
-          <span class="block text-[10px] text-slate-400">Comuna 11</span>
+        <!-- Chacarita -->
+        <button type="button" onclick="selectAndChatBarrio('Chacarita')" data-comuna="Centro" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Chacarita</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 15</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
         </button>
 
-        <!-- Comuna 12 -->
-        <button type="button" onclick="selectAndChatBarrio('Coghlan')" data-comuna="Norte" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Coghlan</span>
-          <span class="block text-[10px] text-slate-400">Comuna 12</span>
-        </button>
-        <button type="button" onclick="selectAndChatBarrio('Saavedra')" data-comuna="Norte" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Saavedra</span>
-          <span class="block text-[10px] text-slate-400">Comuna 12</span>
-        </button>
-        <button type="button" onclick="selectAndChatBarrio('Villa Urquiza')" data-comuna="Norte" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Villa Urquiza</span>
-          <span class="block text-[10px] text-slate-400">Comuna 12</span>
-        </button>
-        <button type="button" onclick="selectAndChatBarrio('Villa Pueyrredón')" data-comuna="Norte" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Villa Pueyrredón</span>
-          <span class="block text-[10px] text-slate-400">Comuna 12</span>
+        <!-- Coghlan -->
+        <button type="button" onclick="selectAndChatBarrio('Coghlan')" data-comuna="Norte" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Coghlan</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 12</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
         </button>
 
-        <!-- Comuna 13 -->
-        <button type="button" onclick="selectAndChatBarrio('Núñez')" data-comuna="Norte" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Núñez</span>
-          <span class="block text-[10px] text-slate-400">Comuna 13</span>
-        </button>
-        <button type="button" onclick="selectAndChatBarrio('Belgrano')" data-comuna="Norte" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Belgrano</span>
-          <span class="block text-[10px] text-slate-400">Comuna 13</span>
-        </button>
-        <button type="button" onclick="selectAndChatBarrio('Colegiales')" data-comuna="Norte" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Colegiales</span>
-          <span class="block text-[10px] text-slate-400">Comuna 13</span>
+        <!-- Colegiales -->
+        <button type="button" onclick="selectAndChatBarrio('Colegiales')" data-comuna="Norte" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Colegiales</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 13</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
         </button>
 
-        <!-- Comuna 14 -->
-        <button type="button" onclick="selectAndChatBarrio('Palermo')" data-comuna="Norte" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Palermo</span>
-          <span class="block text-[10px] text-slate-400">Comuna 14</span>
+        <!-- Constitución -->
+        <button type="button" onclick="selectAndChatBarrio('Constitución')" data-comuna="Sur" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Constitución</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 1</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
         </button>
 
-        <!-- Comuna 15 -->
-        <button type="button" onclick="selectAndChatBarrio('Chacarita')" data-comuna="Centro" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Chacarita</span>
-          <span class="block text-[10px] text-slate-400">Comuna 15</span>
+        <!-- Flores -->
+        <button type="button" onclick="selectAndChatBarrio('Flores')" data-comuna="Oeste" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Flores</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 7</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
         </button>
-        <button type="button" onclick="selectAndChatBarrio('Villa Crespo')" data-comuna="Centro" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Villa Crespo</span>
-          <span class="block text-[10px] text-slate-400">Comuna 15</span>
+
+        <!-- Floresta -->
+        <button type="button" onclick="selectAndChatBarrio('Floresta')" data-comuna="Oeste" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Floresta</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 10</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
         </button>
-        <button type="button" onclick="selectAndChatBarrio('La Paternal')" data-comuna="Centro" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">La Paternal</span>
-          <span class="block text-[10px] text-slate-400">Comuna 15</span>
+
+        <!-- La Boca -->
+        <button type="button" onclick="selectAndChatBarrio('La Boca')" data-comuna="Sur" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">La Boca</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 4</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
         </button>
-        <button type="button" onclick="selectAndChatBarrio('Villa Ortúzar')" data-comuna="Norte" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Villa Ortúzar</span>
-          <span class="block text-[10px] text-slate-400">Comuna 15</span>
+
+        <!-- La Paternal -->
+        <button type="button" onclick="selectAndChatBarrio('La Paternal')" data-comuna="Centro" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">La Paternal</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 15</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
         </button>
-        <button type="button" onclick="selectAndChatBarrio('Agronomía')" data-comuna="Centro" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Agronomía</span>
-          <span class="block text-[10px] text-slate-400">Comuna 15</span>
+
+        <!-- Liniers -->
+        <button type="button" onclick="selectAndChatBarrio('Liniers')" data-comuna="Oeste" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Liniers</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 9</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
         </button>
-        <button type="button" onclick="selectAndChatBarrio('Parque Chas')" data-comuna="Norte" class="barrio-card bg-white border border-slate-200/90 rounded-xl p-3 text-left hover:border-sky-500 hover:bg-sky-50/40 hover:shadow-md transition group">
-          <span class="block text-xs font-bold text-slate-800 group-hover:text-sky-700">Parque Chas</span>
-          <span class="block text-[10px] text-slate-400">Comuna 15</span>
+
+        <!-- Mataderos -->
+        <button type="button" onclick="selectAndChatBarrio('Mataderos')" data-comuna="Oeste" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Mataderos</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 9</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
+        </button>
+
+        <!-- Monserrat -->
+        <button type="button" onclick="selectAndChatBarrio('Monserrat')" data-comuna="Centro" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Monserrat</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 1</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
+        </button>
+
+        <!-- Monte Castro -->
+        <button type="button" onclick="selectAndChatBarrio('Monte Castro')" data-comuna="Oeste" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Monte Castro</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 10</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
+        </button>
+
+        <!-- Nueva Pompeya -->
+        <button type="button" onclick="selectAndChatBarrio('Nueva Pompeya')" data-comuna="Sur" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Nueva Pompeya</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 4</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
+        </button>
+
+        <!-- Núñez -->
+        <button type="button" onclick="selectAndChatBarrio('Núñez')" data-comuna="Norte" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Núñez</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 13</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
+        </button>
+
+        <!-- Palermo -->
+        <button type="button" onclick="selectAndChatBarrio('Palermo')" data-comuna="Norte" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Palermo</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 14</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
+        </button>
+
+        <!-- Parque Avellaneda -->
+        <button type="button" onclick="selectAndChatBarrio('Parque Avellaneda')" data-comuna="Oeste" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Parque Avellaneda</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 9</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
+        </button>
+
+        <!-- Parque Chacabuco -->
+        <button type="button" onclick="selectAndChatBarrio('Parque Chacabuco')" data-comuna="Oeste" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Parque Chacabuco</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 7</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
+        </button>
+
+        <!-- Parque Chas -->
+        <button type="button" onclick="selectAndChatBarrio('Parque Chas')" data-comuna="Norte" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Parque Chas</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 15</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
+        </button>
+
+        <!-- Parque Patricios -->
+        <button type="button" onclick="selectAndChatBarrio('Parque Patricios')" data-comuna="Sur" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Parque Patricios</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 4</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
+        </button>
+
+        <!-- Puerto Madero -->
+        <button type="button" onclick="selectAndChatBarrio('Puerto Madero')" data-comuna="Sur" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Puerto Madero</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 1</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
+        </button>
+
+        <!-- Recoleta -->
+        <button type="button" onclick="selectAndChatBarrio('Recoleta')" data-comuna="Norte" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Recoleta</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 2</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
+        </button>
+
+        <!-- Retiro -->
+        <button type="button" onclick="selectAndChatBarrio('Retiro')" data-comuna="Centro" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Retiro</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 1</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
+        </button>
+
+        <!-- Saavedra -->
+        <button type="button" onclick="selectAndChatBarrio('Saavedra')" data-comuna="Norte" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Saavedra</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 12</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
+        </button>
+
+        <!-- San Cristóbal -->
+        <button type="button" onclick="selectAndChatBarrio('San Cristóbal')" data-comuna="Centro" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">San Cristóbal</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 3</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
+        </button>
+
+        <!-- San Nicolás -->
+        <button type="button" onclick="selectAndChatBarrio('San Nicolás')" data-comuna="Centro" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">San Nicolás</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 1</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
+        </button>
+
+        <!-- San Telmo -->
+        <button type="button" onclick="selectAndChatBarrio('San Telmo')" data-comuna="Sur" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">San Telmo</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 1</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
+        </button>
+
+        <!-- Vélez Sarsfield -->
+        <button type="button" onclick="selectAndChatBarrio('Vélez Sarsfield')" data-comuna="Oeste" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Vélez Sarsfield</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 10</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
+        </button>
+
+        <!-- Versalles -->
+        <button type="button" onclick="selectAndChatBarrio('Versalles')" data-comuna="Oeste" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Versalles</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 10</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
+        </button>
+
+        <!-- Villa Crespo -->
+        <button type="button" onclick="selectAndChatBarrio('Villa Crespo')" data-comuna="Centro" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Villa Crespo</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 15</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
+        </button>
+
+        <!-- Villa del Parque -->
+        <button type="button" onclick="selectAndChatBarrio('Villa del Parque')" data-comuna="Oeste" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Villa del Parque</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 11</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
+        </button>
+
+        <!-- Villa Devoto -->
+        <button type="button" onclick="selectAndChatBarrio('Villa Devoto')" data-comuna="Oeste" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Villa Devoto</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 11</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
+        </button>
+
+        <!-- Villa General Mitre -->
+        <button type="button" onclick="selectAndChatBarrio('Villa General Mitre')" data-comuna="Oeste" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Villa Gral. Mitre</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 11</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
+        </button>
+
+        <!-- Villa Lugano -->
+        <button type="button" onclick="selectAndChatBarrio('Villa Lugano')" data-comuna="Sur" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Villa Lugano</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 8</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
+        </button>
+
+        <!-- Villa Luro -->
+        <button type="button" onclick="selectAndChatBarrio('Villa Luro')" data-comuna="Oeste" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Villa Luro</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 10</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
+        </button>
+
+        <!-- Villa Ortúzar -->
+        <button type="button" onclick="selectAndChatBarrio('Villa Ortúzar')" data-comuna="Norte" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Villa Ortúzar</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 15</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
+        </button>
+
+        <!-- Villa Pueyrredón -->
+        <button type="button" onclick="selectAndChatBarrio('Villa Pueyrredón')" data-comuna="Norte" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Villa Pueyrredón</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 12</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
+        </button>
+
+        <!-- Villa Real -->
+        <button type="button" onclick="selectAndChatBarrio('Villa Real')" data-comuna="Oeste" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Villa Real</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 10</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
+        </button>
+
+        <!-- Villa Riachuelo -->
+        <button type="button" onclick="selectAndChatBarrio('Villa Riachuelo')" data-comuna="Sur" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Villa Riachuelo</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 8</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
+        </button>
+
+        <!-- Villa Santa Rita -->
+        <button type="button" onclick="selectAndChatBarrio('Villa Santa Rita')" data-comuna="Oeste" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Villa Santa Rita</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 11</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
+        </button>
+
+        <!-- Villa Soldati -->
+        <button type="button" onclick="selectAndChatBarrio('Villa Soldati')" data-comuna="Sur" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Villa Soldati</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 8</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
+        </button>
+
+        <!-- Villa Urquiza -->
+        <button type="button" onclick="selectAndChatBarrio('Villa Urquiza')" data-comuna="Norte" class="barrio-card bg-white border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 text-left hover:border-sky-500 hover:shadow-md hover:bg-sky-50/30 transition group flex flex-col justify-between">
+          <span class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-sky-700 transition">Villa Urquiza</span>
+          <span class="text-[10px] font-semibold text-slate-400 group-hover:text-sky-600 transition mt-1.5 flex items-center justify-between">
+            <span>Comuna 12</span>
+            <span class="text-slate-300 group-hover:text-sky-600">→</span>
+          </span>
         </button>
 
       </div>
@@ -1244,7 +1430,70 @@
 
   <!-- JavaScript Autocontenido & Lógica de Agendamiento -->
   <script>
-    // Inicialización dinámica de días para la herramienta de agendamiento
+    // ============================================================================
+    // ⚙️ PANEL DE CONTROL DE AGENDA / TURNOS
+    // ============================================================================
+    const AGENDA_CONFIG = {
+      // 1. DÍAS HÁBILES HABILITADOS:
+      // 0: Domingo, 1: Lunes, 2: Martes, 3: Miércoles, 4: Jueves, 5: Viernes, 6: Sábado
+      // Sábados y Domingos bloqueados por defecto: Lunes a Viernes [1, 2, 3, 4, 5]
+      diasLaborables: [1, 2, 3, 4, 5],
+
+      // 2. CANTIDAD DE DÍAS HÁBILES A MOSTRAR en el selector (siempre 5 días hábiles a la vista):
+      diasAMostrar: 5,
+
+      // 3. FRANJAS HORARIAS BASE:
+      franjasHorarias: [
+        {
+          id: 'manana',
+          titulo: '🌅 Franja Mañana',
+          horario: '09:00 a 12:00 hs',
+          activa: true,
+          badgeActivo: 'Disponible',
+          badgeInactivo: 'Sin cupo'
+        },
+        {
+          id: 'mediodia',
+          titulo: '☀️ Franja Mediodía',
+          horario: '12:00 a 15:00 hs',
+          activa: true,
+          badgeActivo: 'Disponible',
+          badgeInactivo: 'Sin cupo'
+        },
+        {
+          id: 'tarde',
+          titulo: '🌇 Franja Tarde',
+          horario: '15:00 a 18:30 hs',
+          activa: true,
+          badgeActivo: 'Disponible',
+          badgeInactivo: 'Sin cupo'
+        }
+      ],
+
+      // 4. BLOQUEOS RECURRENTES POR DÍA DE LA SEMANA:
+      // Ejemplo: 4: ['mediodia'] -> Todos los Jueves (4) bloqueado el mediodía
+      bloqueosPorDiaSemana: {
+        4: ['mediodia'] // Todos los jueves sin turno al mediodía
+      },
+
+      // 5. BLOQUEOS PUNTUALES POR FECHA (Soporta 'AAAA-MM-DD' o 'MM-DD'):
+      bloqueosPorFecha: {
+        '09-08': ['manana'],                   // 8 de Septiembre: Mañana bloqueada
+        '2026-09-08': ['manana'],
+        '09-10': ['manana'],                   // 10 de Septiembre: Mañana bloqueada
+        '2026-09-10': ['manana'],
+        '10-24': ['mediodia', 'tarde'],        // 24 de Octubre: Mediodía y Tarde bloqueados
+        '2026-10-24': ['mediodia', 'tarde']
+      },
+
+      // 6. DÍAS ENTEROS BLOQUEADOS (Feriados o días completos no laborables):
+      fechasBloqueadas: [
+        // '05-01', // 1 de Mayo
+        // '05-25', // 25 de Mayo
+      ]
+    };
+
+    // Inicialización dinámica de días según la configuración
     function initBookingDays() {
       const container = document.getElementById('bookingDaysContainer');
       if (!container) return;
@@ -1255,61 +1504,183 @@
       const today = new Date();
       container.innerHTML = '';
 
-      // Generar 4 días próximos hábiles/disponibles
       let generated = 0;
       let offset = 0;
+      let firstDateISO = '';
+      let firstMonthStr = '';
+      let firstDayStr = '';
+      let firstDayIndex = 0;
+      let firstFullDateValue = '';
+      let firstIsToday = false;
 
-      while (generated < 4) {
+      while (generated < AGENDA_CONFIG.diasAMostrar && offset < 35) {
         const d = new Date();
         d.setDate(today.getDate() + offset);
-        offset++;
-
-        // Si es domingo, lo omitimos para visitas programadas o lo incluimos como guardia
-        const dayIndex = d.getDay();
-        const isSunday = dayIndex === 0;
         
-        const dayName = offset === 1 ? 'Hoy' : (offset === 2 ? 'Mañana' : daysOfWeek[dayIndex]);
-        const dateString = `${d.getDate()} de ${months[d.getMonth()]}`;
-        const fullDateValue = `${dayName} ${d.getDate()} de ${months[d.getMonth()]}`;
+        const dayIndex = d.getDay();
+        const year = d.getFullYear();
+        const monthStr = String(d.getMonth() + 1).padStart(2, '0');
+        const dayStr = String(d.getDate()).padStart(2, '0');
+        const dateISO = `${year}-${monthStr}-${dayStr}`;
+        const shortDate = `${monthStr}-${dayStr}`;
 
-        const isFirst = generated === 0;
+        // Verificar si el día de la semana es laborable y no está en feriados/bloqueos completos
+        const esDiaHabil = AGENDA_CONFIG.diasLaborables.includes(dayIndex);
+        const estaBloqueado = AGENDA_CONFIG.fechasBloqueadas.includes(dateISO) || AGENDA_CONFIG.fechasBloqueadas.includes(shortDate);
 
+        if (esDiaHabil && !estaBloqueado) {
+          const isToday = offset === 0;
+          const isTomorrow = offset === 1;
+          const dayName = isToday ? 'Hoy' : (isTomorrow ? 'Mañana' : daysOfWeek[dayIndex]);
+          const fullDateValue = `${dayName} ${d.getDate()} de ${months[d.getMonth()]}`;
+          const isFirst = generated === 0;
+
+          if (isFirst) {
+            firstDateISO = dateISO;
+            firstMonthStr = monthStr;
+            firstDayStr = dayStr;
+            firstDayIndex = dayIndex;
+            firstFullDateValue = fullDateValue;
+            firstIsToday = isToday;
+            document.getElementById('selectedBookingDate').value = fullDateValue;
+          }
+
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = `booking-day-btn p-3 rounded-2xl border-2 text-center transition ${isFirst ? 'border-emerald-600 bg-emerald-50 text-emerald-950 font-bold shadow-xs' : 'border-slate-200 bg-white hover:border-slate-300 text-slate-700'}`;
+          btn.onclick = function() {
+            selectDay(fullDateValue, dateISO, monthStr, dayStr, dayIndex, isToday, this);
+          };
+
+          btn.innerHTML = `
+            <span class="block text-xs font-bold uppercase tracking-wider ${isFirst ? 'text-emerald-700' : 'text-slate-500'}">${dayName}</span>
+            <strong class="block text-sm font-extrabold mt-0.5 text-slate-900">${d.getDate()} ${months[d.getMonth()]}</strong>
+            <span class="block text-[10px] text-emerald-600 font-bold mt-1">Disponible</span>
+          `;
+
+          container.appendChild(btn);
+          generated++;
+        }
+        offset++;
+      }
+
+      // Renderizar franjas correspondientes al primer día disponible
+      if (firstDateISO) {
+        renderBookingSlotsForDate(firstDateISO, firstMonthStr, firstDayStr, firstDayIndex, firstIsToday);
+      }
+    }
+
+    // Renderizado dinámico de franjas horarias evaluando bloqueos y control de hora en tiempo real
+    function renderBookingSlotsForDate(dateISO, monthStr, dayStr, dayIndex, isToday) {
+      const container = document.getElementById('bookingSlotsContainer');
+      if (!container) return;
+
+      container.innerHTML = '';
+      let firstActiveSelected = false;
+
+      // Hora actual en tiempo real para control de expiración
+      const now = new Date();
+      const currentHour = now.getHours();
+      const currentMinutes = now.getMinutes();
+      const currentTimeDecimal = currentHour + currentMinutes / 60;
+
+      // Límites de corte horario para el día en curso
+      // Mañana (09 a 12): corta a las 11:30 hs
+      // Mediodía (12 a 15): corta a las 14:30 hs
+      // Tarde (15 a 18:30): corta a las 18:00 hs
+      const limitesHorarios = {
+        'manana': 11.5,
+        'mediodia': 14.5,
+        'tarde': 18.0
+      };
+
+      // Bloqueos puntuales para esta fecha (soporta AAAA-MM-DD y MM-DD)
+      const shortDate = `${monthStr}-${dayStr}`;
+      const bloqueadosPorFecha = AGENDA_CONFIG.bloqueosPorFecha[dateISO] || 
+                                 AGENDA_CONFIG.bloqueosPorFecha[shortDate] || 
+                                 [];
+      
+      // Bloqueos recurrentes para este día de la semana
+      const bloqueadosPorDiaSemana = AGENDA_CONFIG.bloqueosPorDiaSemana[dayIndex] || [];
+
+      AGENDA_CONFIG.franjasHorarias.forEach(slot => {
+        const slotValue = `${slot.titulo.replace(/^[^\w\s]+/, '').trim()} (${slot.horario})`;
         const btn = document.createElement('button');
         btn.type = 'button';
-        btn.className = `booking-day-btn p-3 rounded-2xl border-2 text-center transition ${isFirst ? 'border-emerald-600 bg-emerald-50 text-emerald-950 font-bold shadow-xs' : 'border-slate-200 bg-white hover:border-slate-300 text-slate-700'}`;
-        btn.onclick = function() {
-          selectDay(fullDateValue, this);
-        };
 
-        btn.innerHTML = `
-          <span class="block text-xs font-bold uppercase tracking-wider ${isFirst ? 'text-emerald-700' : 'text-slate-500'}">${dayName}</span>
-          <strong class="block text-sm font-extrabold mt-0.5 text-slate-900">${d.getDate()} ${months[d.getMonth()]}</strong>
-          <span class="block text-[10px] ${isSunday ? 'text-amber-600' : 'text-emerald-600'} font-bold mt-1">${isSunday ? 'Guardia' : 'Turnos'}</span>
-        `;
+        // 1. Verificar si la franja ya venció por horario en el día de hoy
+        const limite = limitesHorarios[slot.id] || 18.0;
+        const franjaExpiradaHoy = isToday && (currentTimeDecimal >= limite);
 
-        container.appendChild(btn);
+        // 2. Verificar bloqueos de agenda
+        const estaPausadoGlobal = !slot.activa;
+        const estaBloqueadoHoy = bloqueadosPorFecha.includes(slot.id);
+        const estaBloqueadoSemanal = bloqueadosPorDiaSemana.includes(slot.id);
+        
+        const slotDisponible = !estaPausadoGlobal && !estaBloqueadoHoy && !estaBloqueadoSemanal && !franjaExpiradaHoy;
 
-        if (isFirst) {
-          document.getElementById('selectedBookingDate').value = fullDateValue;
+        if (slotDisponible) {
+          const isSelected = !firstActiveSelected;
+          if (isSelected) {
+            firstActiveSelected = true;
+            document.getElementById('selectedBookingSlot').value = slotValue;
+          }
+
+          btn.className = `slot-btn border-2 p-3.5 rounded-2xl text-left transition flex items-center justify-between group ${isSelected ? 'border-emerald-600 bg-emerald-50/70 shadow-xs' : 'border-slate-200 bg-white hover:border-sky-500 hover:bg-sky-50/50'}`;
+          btn.onclick = function() {
+            selectSlot(slotValue, this);
+          };
+
+          btn.innerHTML = `
+            <div>
+              <strong class="text-xs sm:text-sm text-slate-900 block group-hover:text-sky-700">${slot.titulo}</strong>
+              <span class="text-[11px] text-slate-500">${slot.horario}</span>
+            </div>
+            <span class="text-xs text-emerald-600 font-bold bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-md">${slot.badgeActivo || 'Disponible'}</span>
+          `;
+        } else {
+          // Franja inactiva / bloqueada / pasada
+          btn.disabled = true;
+          btn.className = 'slot-btn border border-slate-200 bg-slate-100/80 opacity-60 p-3.5 rounded-2xl text-left flex items-center justify-between cursor-not-allowed';
+          
+          let textoBadge = slot.badgeInactivo || 'Sin cupo';
+          if (franjaExpiradaHoy) {
+            textoBadge = 'Horario pasado';
+          }
+
+          btn.innerHTML = `
+            <div>
+              <strong class="text-xs sm:text-sm text-slate-400 block line-through">${slot.titulo}</strong>
+              <span class="text-[11px] text-slate-400">${slot.horario}</span>
+            </div>
+            <span class="text-xs text-slate-500 font-medium bg-slate-200 px-2 py-0.5 rounded-md">${textoBadge}</span>
+          `;
         }
 
-        generated++;
+        container.appendChild(btn);
+      });
+
+      if (!firstActiveSelected) {
+        document.getElementById('selectedBookingSlot').value = '';
       }
     }
 
     // Selección de Día
-    function selectDay(dateValue, btnElement) {
+    function selectDay(dateValue, dateISO, monthStr, dayStr, dayIndex, isToday, btnElement) {
       document.getElementById('selectedBookingDate').value = dateValue;
       document.querySelectorAll('.booking-day-btn').forEach(btn => {
         btn.className = 'booking-day-btn p-3 rounded-2xl border-2 text-center transition border-slate-200 bg-white hover:border-slate-300 text-slate-700';
       });
       btnElement.className = 'booking-day-btn p-3 rounded-2xl border-2 text-center transition border-emerald-600 bg-emerald-50 text-emerald-950 font-bold shadow-xs';
+      
+      // Actualizar franjas horarias según el día seleccionado
+      renderBookingSlotsForDate(dateISO, monthStr, dayStr, dayIndex, isToday);
     }
 
     // Selección de Franja Horaria
     function selectSlot(slotValue, btnElement) {
       document.getElementById('selectedBookingSlot').value = slotValue;
-      document.querySelectorAll('.slot-btn').forEach(btn => {
+      document.querySelectorAll('.slot-btn:not([disabled])').forEach(btn => {
         btn.classList.remove('border-emerald-600', 'bg-emerald-50/70', 'shadow-xs');
         btn.classList.add('border-slate-200', 'bg-white');
       });
@@ -1321,7 +1692,13 @@
     document.getElementById('bookingForm')?.addEventListener('submit', function(e) {
       e.preventDefault();
       const date = document.getElementById('selectedBookingDate')?.value || 'Próximo día disponible';
-      const slot = document.getElementById('selectedBookingSlot')?.value || 'A coordinar';
+      const slot = document.getElementById('selectedBookingSlot')?.value || '';
+      
+      if (!slot) {
+        alert('Por favor seleccioná una franja horaria que esté disponible (las franjas marcadas como "Sin cupo" u "Horario pasado" no pueden ser seleccionadas).');
+        return;
+      }
+
       const neighborhood = document.getElementById('bookingNeighborhood')?.value || '';
       const name = document.getElementById('bookingName')?.value.trim() || '';
       const reason = document.getElementById('bookingReason')?.value.trim() || '';
