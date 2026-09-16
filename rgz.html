@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RGZ Soluciones ⚡ Ingeniería & Servicios Eléctricos de Alta Calidad</title>
+  <meta name="description" content="Servicios técnicos e instalaciones eléctricas de máxima calidad y seguridad para viviendas particulares, comercios y consorcios en CABA y GBA. Normas AEA, materiales homologados y factura formal.">
+  <meta property="og:title" content="RGZ Soluciones ⚡ Ingeniería & Mantenimiento de Alta Precisión">
+  <meta property="og:description" content="Estándares superiores de seguridad, prolijidad técnica y garantía escrita para hogares, oficinas y edificios.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://electricistadebarrio.com.ar/rgz.html">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['"Space Grotesk"', 'monospace'],
+          },
+          colors: {
+            rgz: {
+              obsidian: '#080C15',
+              navy: '#0E1726',
+              slate: '#1E293B',
+              cobalt: '#1D4ED8',
+              cobaltLight: '#3B82F6',
+              bronze: '#D97706',
+              bronzeLight: '#F59E0B',
+              platinum: '#F8FAFC',
+              wa: '#16A34A',
+              waHover: '#15803D'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    .pattern-subtle {
+      background-image: radial-gradient(rgba(29, 78, 216, 0.08) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .pattern-dark {
+      background-image: radial-gradient(rgba(245, 158, 11, 0.08) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+    @keyframes pulse-subtle {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.15); }
+    }
+    .pulse-dot {
+      animation: pulse-subtle 2s infinite ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-rgz-platinum text-slate-800 font-sans antialiased selection:bg-rgz-cobalt selection:text-white">
+
+  <!-- 1. BARRA INSTITUCIONAL SUPERIOR -->
+  <div class="bg-rgz-obsidian text-slate-300 text-xs font-medium py-2 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-2.5">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-dot inline-block"></span>
+        <span class="text-slate-200 tracking-tight font-semibold">RGZ Soluciones · Ingeniería Eléctrica & Mantenimiento de Precisión</span>
+      </div>
+      <div class="flex items-center gap-5 text-[11px] font-mono">
+        <span class="hidden md:inline text-slate-400">Normativas AEA 90364 · Instrumental Calibrado · Factura A/B</span>
+        <a href="https://wa.me/5491178232233?text=Hola%20RGZ%20Soluciones%2C%20quisiera%20solicitar%20asesoramiento%20t%C3%A9cnico%20de%20alta%20calidad." 
+           target="_blank" 
+           class="inline-flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 font-bold transition">
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+          </svg>
+          <span>Atención Directa: 11 7823-2233</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. NAVBAR CORPORATIVO -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- LOGO RGZ -->
+      <a href="#hero" class="flex items-center gap-3.5 group">
+        <div class="w-11 h-11 bg-rgz-obsidian rounded-xl flex items-center justify-center flex-shrink-0 shadow-sm border border-slate-700 group-hover:border-rgz-cobalt transition">
+          <span class="font-mono font-black text-xl text-white tracking-tighter">
+            RG<span class="text-rgz-bronzeLight">Z</span>
+          </span>
+        </div>
+        <div>
+          <div class="font-black text-xl tracking-tight text-slate-900 leading-none">
+            RGZ <span class="text-rgz-cobalt font-extrabold">SOLUCIONES</span>
+          </div>
+          <span class="text-[9.5px] font-bold tracking-widest text-slate-500 uppercase mt-1 block font-mono">
+            Servicios Técnicos & Mantenimiento
+          </span>
+        </div>
+      </a>
+
+      <!-- MENU NAVEGACIÓN -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-700">
+        <a href="#propuesta" class="hover:text-rgz-cobalt transition">Propuesta de Valor</a>
+        <a href="#segmentos" class="hover:text-rgz-cobalt transition">Viviendas · Comercios · Consorcios</a>
+        <a href="#servicios" class="hover:text-rgz-cobalt transition">Servicios de Precisión</a>
+        <a href="#garantia" class="hover:text-rgz-cobalt transition">Estándares & Garantía</a>
+        <a href="#cotizador" class="hover:text-rgz-cobalt transition">Contacto</a>
+      </nav>
+
+      <!-- CTA WHATSAPP -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="https://wa.me/5491178232233?text=Hola%20RGZ%20Soluciones%2C%20quisiera%20solicitar%20un%20presupuesto%20profesional." 
+           target="_blank"
+           class="bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs py-3 px-4 rounded-xl flex items-center gap-2 shadow-sm border border-slate-700 hover:border-slate-500 transition">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <span>WhatsApp: <strong>11 7823-2233</strong></span>
+        </a>
+      </div>
+
+      <!-- BOTON MOBILE -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-700 hover:text-rgz-cobalt focus:outline-none" aria-label="Abrir menú">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- MENU MOBILE DESPLEGABLE -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white px-5 pt-3 pb-6 space-y-3 shadow-xl">
+      <a href="#propuesta" class="block py-2 text-sm font-semibold text-slate-800 hover:text-rgz-cobalt">Propuesta de Valor</a>
+      <a href="#segmentos" class="block py-2 text-sm font-semibold text-slate-800 hover:text-rgz-cobalt">Viviendas · Comercios · Consorcios</a>
+      <a href="#servicios" class="block py-2 text-sm font-semibold text-slate-800 hover:text-rgz-cobalt">Servicios de Precisión</a>
+      <a href="#garantia" class="block py-2 text-sm font-semibold text-slate-800 hover:text-rgz-cobalt">Estándares & Garantía</a>
+      <a href="#cotizador" class="block py-2 text-sm font-semibold text-slate-800 hover:text-rgz-cobalt">Contacto</a>
+      <a href="https://wa.me/5491178232233?text=Hola%20RGZ%20Soluciones%2C%20quisiera%20solicitar%20un%20presupuesto%20profesional." 
+         target="_blank"
+         class="w-full bg-slate-900 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 shadow-md">
+        <span>💬 Contactar por WhatsApp (11 7823-2233)</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- 3. HERO SECTION: SERIEDAD & ALTA CALIDAD -->
+  <section id="hero" class="relative overflow-hidden bg-gradient-to-b from-white via-slate-50 to-slate-100 py-16 sm:py-24 pattern-subtle border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- COLUMNA IZQUIERDA -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <div class="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2">
+            <span class="inline-flex items-center gap-1.5 bg-slate-900 text-white px-3 py-1 rounded-full text-xs font-bold font-mono">
+              <span class="w-1.5 h-1.5 rounded-full bg-rgz-bronzeLight"></span>
+              ESTÁNDAR SUPERIOR
+            </span>
+            <span class="inline-flex items-center gap-1.5 bg-blue-50 border border-blue-200 text-rgz-cobalt px-3 py-1 rounded-full text-xs font-bold">
+              🛡️ Seguridad Eléctrica Sin Concesiones
+            </span>
+            <span class="inline-flex items-center gap-1.5 bg-slate-100 border border-slate-200 text-slate-700 px-3 py-1 rounded-full text-xs font-bold font-mono">
+              CABA y Gran Buenos Aires
+            </span>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl lg:text-[46px] font-extrabold tracking-tight text-slate-900 leading-[1.18]">
+            Ingeniería eléctrica y mantenimiento de alta precisión.<br />
+            <span class="text-rgz-cobalt">
+              Calidad sin atajos para quienes priorizan la seguridad.
+            </span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            Diseñamos, ejecutamos y mantenemos instalaciones eléctricas con el más alto estándar normativo y estético. Especializados en <strong>viviendas particulares de categoría</strong>, <strong>locales y oficinas comerciales</strong> y <strong>consorcios exigentes</strong> que demandan respaldo formal, instrumental calibrado y garantía escrita.
+          </p>
+
+          <!-- BOTONES PRINCIPALES -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="https://wa.me/5491178232233?text=Hola%20RGZ%20Soluciones%2C%20quisiera%20solicitar%20un%20diagn%C3%B3stico%20o%20presupuesto%20t%C3%A9cnico." 
+               target="_blank"
+               class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-black text-sm sm:text-base py-4 px-7 rounded-2xl flex items-center justify-center gap-3 shadow-lg shadow-emerald-700/20 transition transform hover:-translate-y-0.5">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+              </svg>
+              <span>Solicitar Asesoramiento Técnico</span>
+            </a>
+
+            <a href="#segmentos" 
+               class="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-800 font-bold text-sm sm:text-base py-4 px-6 rounded-2xl flex items-center justify-center gap-2 border border-slate-300 shadow-xs transition hover:border-rgz-cobalt">
+              <span>Conocer Soluciones por Área</span> →
+            </a>
+          </div>
+
+          <!-- PILARES DE CERTIFICACIÓN -->
+          <div class="pt-4 grid grid-cols-3 gap-3 max-w-md mx-auto lg:mx-0">
+            <div class="border-l-2 border-rgz-cobalt pl-3 text-left">
+              <span class="block font-mono font-bold text-slate-900 text-sm">AEA 90364</span>
+              <span class="text-[11px] text-slate-500 font-medium">Cálculo & Seguridad</span>
+            </div>
+            <div class="border-l-2 border-rgz-bronze pl-3 text-left">
+              <span class="block font-mono font-bold text-slate-900 text-sm">IRAM / LÍDERES</span>
+              <span class="text-[11px] text-slate-500 font-medium">Marcas Homologadas</span>
+            </div>
+            <div class="border-l-2 border-slate-900 pl-3 text-left">
+              <span class="block font-mono font-bold text-slate-900 text-sm">FACTURA A / B</span>
+              <span class="text-[11px] text-slate-500 font-medium">Respaldo Tributario</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- COLUMNA DERECHA: CARD DE IDENTIDAD TÉCNICA -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="w-full max-w-md bg-white border border-slate-200/90 rounded-3xl p-6 sm:p-7 shadow-xl relative overflow-hidden">
+            
+            <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                <span class="font-mono text-xs font-bold text-slate-800 uppercase tracking-wider">Protocolo de Trabajo RGZ</span>
+              </div>
+              <span class="text-[10px] font-mono font-bold bg-slate-100 text-slate-700 px-2.5 py-0.5 rounded border border-slate-200">
+                AUDITABLE
+              </span>
+            </div>
+
+            <div class="mt-5 space-y-3.5">
+              
+              <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-start gap-3.5">
+                <div class="w-7 h-7 rounded-lg bg-rgz-obsidian text-rgz-bronzeLight font-mono font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
+                  01
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-slate-900">Diagnóstico Instrumental Preciso</h4>
+                  <p class="text-[11px] text-slate-500 leading-tight mt-0.5">Mediciones de aislamiento, fugas a tierra con telurímetro y detección termo-magnética sin improvisación.</p>
+                </div>
+              </div>
+
+              <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-start gap-3.5">
+                <div class="w-7 h-7 rounded-lg bg-rgz-obsidian text-rgz-bronzeLight font-mono font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
+                  02
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-slate-900">Materiales y Marcas de Primer Nivel</h4>
+                  <p class="text-[11px] text-slate-500 leading-tight mt-0.5">Aparamenta Schneider Electric, ABB, Siemens y conductores Prysmian libres de halógenos.</p>
+                </div>
+              </div>
+
+              <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-start gap-3.5">
+                <div class="w-7 h-7 rounded-lg bg-rgz-obsidian text-rgz-bronzeLight font-mono font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
+                  03
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-slate-900">Terminación & Prolijidad Arquitectónica</h4>
+                  <p class="text-[11px] text-slate-500 leading-tight mt-0.5">Canalizaciones perfectas, tableros rotulados y respeto absoluto por los espacios de tu vivienda o negocio.</p>
+                </div>
+              </div>
+
+              <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-start gap-3.5">
+                <div class="w-7 h-7 rounded-lg bg-rgz-obsidian text-rgz-bronzeLight font-mono font-bold text-xs flex items-center justify-center flex-shrink-0 mt-0.5">
+                  04
+                </div>
+                <div>
+                  <h4 class="text-xs font-bold text-slate-900">Garantía Escrita & Facturación Formal</h4>
+                  <p class="text-[11px] text-slate-500 leading-tight mt-0.5">Comprobante fiscal A o B y certificado de conformidad técnica por escrito en cada intervención.</p>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="mt-5 pt-4 border-t border-slate-100">
+              <div class="flex items-center justify-between text-xs">
+                <span class="text-slate-500 font-medium">WhatsApp directo de guardia:</span>
+                <a href="https://wa.me/5491178232233" target="_blank" class="font-mono font-bold text-slate-900 hover:text-rgz-cobalt">11 7823-2233</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4. SECCIÓN DE SEGMENTOS: VIVIENDAS, COMERCIOS Y CONSORCIOS -->
+  <section id="segmentos" class="py-20 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="font-mono text-xs font-bold uppercase tracking-wider text-rgz-cobalt bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+          Soluciones a Medida
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">
+          Especialización por Segmento de Cliente
+        </h2>
+        <p class="text-slate-600 text-base sm:text-lg mt-3">
+          Cada espacio tiene requerimientos técnicos únicos. Desarrollamos soluciones específicas con máxima prolijidad y cumplimiento.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- CARD 1: VIVIENDAS PARTICULARES & RESIDENCIAS -->
+        <div class="bg-gradient-to-b from-slate-50 to-white border border-slate-200/90 rounded-3xl p-7 flex flex-col justify-between shadow-sm hover:shadow-lg transition">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-2xl">🏡</span>
+              <span class="font-mono text-[11px] bg-slate-900 text-slate-200 px-2.5 py-0.5 rounded font-bold">
+                PARTICULARES
+              </span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Viviendas & Residencias</h3>
+            <p class="text-xs text-slate-600 leading-relaxed mb-5">
+              Cuidado absoluto de tu hogar, tus electrodomésticos de valor y la estética de tus ambientes.
+            </p>
+
+            <ul class="text-xs text-slate-700 space-y-2.5 border-t border-slate-200/80 pt-4">
+              <li class="flex items-start gap-2">
+                <span class="text-rgz-cobalt font-bold">✓</span>
+                <span><strong>Protección de Equipamiento:</strong> Protectores de sobretensión y estabilizadores para aires acondicionados, heladeras inverter y electrónica.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-rgz-cobalt font-bold">✓</span>
+                <span><strong>Iluminación de Diseño:</strong> Instalación de artefactos de diseño, rieles magnéticos, perfiles LED y dimerización.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-rgz-cobalt font-bold">✓</span>
+                <span><strong>Tableros Seguros & Rotulados:</strong> Rearmado con disyuntores de alta inmunidad para evitar cortes intempestivos.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-rgz-cobalt font-bold">✓</span>
+                <span><strong>Líneas Dedicadas:</strong> Circuitos independientes para anafes, hornos eléctricos, calderas y estaciones de carga.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-4 border-t border-slate-200/80">
+            <a href="https://wa.me/5491178232233?text=Hola%20RGZ%20Soluciones%2C%20quisiera%20solicitar%20un%20presupuesto%20para%20mi%20vivienda." 
+               target="_blank" 
+               class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition">
+              <span>Consultar Proyecto Residencial</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 2: COMERCIOS & OFICINAS -->
+        <div class="bg-gradient-to-b from-slate-50 to-white border border-slate-200/90 rounded-3xl p-7 flex flex-col justify-between shadow-sm hover:shadow-lg transition">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-2xl">🏬</span>
+              <span class="font-mono text-[11px] bg-rgz-cobalt text-white px-2.5 py-0.5 rounded font-bold">
+                COMERCIAL
+              </span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Comercios, Oficinas & Pymes</h3>
+            <p class="text-xs text-slate-600 leading-relaxed mb-5">
+              Continuidad operativa garantizada para que tu negocio no pierda ventas ni sufra interrupciones.
+            </p>
+
+            <ul class="text-xs text-slate-700 space-y-2.5 border-t border-slate-200/80 pt-4">
+              <li class="flex items-start gap-2">
+                <span class="text-rgz-cobalt font-bold">✓</span>
+                <span><strong>Adecuación de Carga y Fuerza Motriz:</strong> Balanceo de fases y tendido de líneas trifásicas para maquinaria o cámaras.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-rgz-cobalt font-bold">✓</span>
+                <span><strong>Luminotecnia Comercial:</strong> Sistemas LED de alta eficiencia para vidrieras, salones y oficinas corporativas.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-rgz-cobalt font-bold">✓</span>
+                <span><strong>Circuitos de Respaldo & UPS:</strong> Instalaciones preparadas para servidores, racks y puestos de trabajo críticos.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-rgz-cobalt font-bold">✓</span>
+                <span><strong>Habilitaciones & Normativas:</strong> Mediciones de puesta a tierra reglamentarias para habilitaciones comerciales.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-4 border-t border-slate-200/80">
+            <a href="https://wa.me/5491178232233?text=Hola%20RGZ%20Soluciones%2C%20quisiera%20solicitar%20presupuesto%20para%20un%20comercio%20o%20empresa." 
+               target="_blank" 
+               class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition">
+              <span>Consultar Solución Comercial</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 3: CONSORCIOS & EDIFICIOS -->
+        <div class="bg-gradient-to-b from-slate-50 to-white border border-slate-200/90 rounded-3xl p-7 flex flex-col justify-between shadow-sm hover:shadow-lg transition">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-2xl">🏢</span>
+              <span class="font-mono text-[11px] bg-slate-800 text-white px-2.5 py-0.5 rounded font-bold">
+                EDIFICIOS
+              </span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">Consorcios & Edificios</h3>
+            <p class="text-xs text-slate-600 leading-relaxed mb-5">
+              Gestión profesional para administraciones de consorcios con rendición transparente y factura legal.
+            </p>
+
+            <ul class="text-xs text-slate-700 space-y-2.5 border-t border-slate-200/80 pt-4">
+              <li class="flex items-start gap-2">
+                <span class="text-rgz-cobalt font-bold">✓</span>
+                <span><strong>Abonos de Mantenimiento Preventivo:</strong> Monitoreo periódico de tableros generales, palieres y áreas comunes.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-rgz-cobalt font-bold">✓</span>
+                <span><strong>Automatismos de Bombas:</strong> Tableros de alternancia para bombas elevadoras de agua y desagote pluvial.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-rgz-cobalt font-bold">✓</span>
+                <span><strong>Luces de Emergencia & Seguridad:</strong> Verificación de autonomía de luminarias y sistemas de evacuación.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-rgz-cobalt font-bold">✓</span>
+                <span><strong>Informes Técnicos Formales:</strong> Diagnósticos detallados y presupuesto previo para presentación en asambleas.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-4 border-t border-slate-200/80">
+            <a href="https://wa.me/5491178232233?text=Hola%20RGZ%20Soluciones%2C%20administro%20un%20consorcio%20y%20quisiera%20solicitar%20una%20propuesta%20t%C3%A9cnica." 
+               target="_blank" 
+               class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition">
+              <span>Solicitar Propuesta para Consorcio</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. SECCIÓN TÉCNICA: SERVICIOS DE PRECISIÓN -->
+  <section id="servicios" class="py-20 bg-rgz-obsidian text-white pattern-dark relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="font-mono text-xs font-bold uppercase tracking-wider text-rgz-bronzeLight bg-rgz-bronze/10 border border-rgz-bronze/30 px-3 py-1 rounded-full">
+          Capacidades Técnicas
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3 tracking-tight">
+          Servicios Eléctricos Ejecutados con Rigor
+        </h2>
+        <p class="text-slate-300 text-base sm:text-lg mt-3">
+          Cada trabajo se entrega con memoria técnica, pruebas de carga y verificación bajo instrumental especializado.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 hover:border-rgz-cobalt transition">
+          <div class="text-rgz-bronzeLight font-mono font-black text-lg mb-3">01</div>
+          <h4 class="text-base font-bold text-white mb-2">Tableros Eléctricos</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Armado y normalización de tableros seccionales y generales. Protecciones diferenciales selectivas, peines de distribución y rotulación normalizada.
+          </p>
+        </div>
+
+        <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 hover:border-rgz-cobalt transition">
+          <div class="text-rgz-bronzeLight font-mono font-black text-lg mb-3">02</div>
+          <h4 class="text-base font-bold text-white mb-2">Medición de Jabalinas</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Medición de resistencia de puesta a tierra con telurímetro calibrado. Protocolo de medición de puesta a tierra para municipios y ART.
+          </p>
+        </div>
+
+        <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 hover:border-rgz-cobalt transition">
+          <div class="text-rgz-bronzeLight font-mono font-black text-lg mb-3">03</div>
+          <h4 class="text-base font-bold text-white mb-2">Diagnóstico de Fallas Complejas</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Detección de corrientes de fuga fugitivas, caídas de tensión por sección insuficiente, armónicos y recalentamiento en bornes.
+          </p>
+        </div>
+
+        <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 hover:border-rgz-cobalt transition">
+          <div class="text-rgz-bronzeLight font-mono font-black text-lg mb-3">04</div>
+          <h4 class="text-base font-bold text-white mb-2">Obras & Recableados</h4>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Recableados integrales con conductores normalizados antillama (IRAM NM 247-3) y canalizaciones embutidas o a la vista de alta prolijidad.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 6. COTIZADOR Y ASISTENTE PROFESIONAL WHATSAPP -->
+  <section id="cotizador" class="py-20 bg-slate-50 pattern-subtle border-b border-slate-200">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-xl">
+        
+        <div class="text-center max-w-xl mx-auto mb-8">
+          <span class="font-mono text-xs font-bold uppercase tracking-wider text-slate-700 bg-slate-100 border border-slate-300 px-3 py-1 rounded-full">
+            Contacto & Solicitud de Presupuesto
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-3">
+            Iniciá tu consulta con RGZ Soluciones
+          </h2>
+          <p class="text-slate-600 text-xs sm:text-sm mt-2">
+            Seleccioná tu requerimiento y te contactaremos de inmediato por WhatsApp con un presupuesto claro y formal.
+          </p>
+        </div>
+
+        <form id="quote-form-rgz" class="space-y-5" onsubmit="event.preventDefault(); sendRgzQuote();">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5 font-mono">
+                Tipo de Solicitante *
+              </label>
+              <select id="rgz-client-type" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-rgz-cobalt focus:bg-white transition">
+                <option value="Vivienda Particular / Residencia">🏡 Vivienda Particular / Residencia</option>
+                <option value="Comercio / Local / Oficina">🏬 Comercio / Local / Oficina</option>
+                <option value="Consorcio / Administración de Edificio">🏢 Consorcio / Administración de Edificio</option>
+                <option value="Empresa / Pyme">🏭 Empresa / Pyme</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5 font-mono">
+                Servicio Requerido *
+              </label>
+              <select id="rgz-service-type" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-rgz-cobalt focus:bg-white transition">
+                <option value="Diagnóstico Técnico / Reparación">⚡ Diagnóstico Técnico / Reparación</option>
+                <option value="Armado / Normalización de Tablero">🛡️ Armado / Normalización de Tablero</option>
+                <option value="Abono de Mantenimiento para Consorcio">📋 Abono de Mantenimiento para Consorcio</option>
+                <option value="Instalación / Recableado Integral">🔌 Instalación / Recableado Integral</option>
+                <option value="Medición de Puesta a Tierra / Protocolo">📐 Medición de Puesta a Tierra / Protocolo</option>
+                <option value="Iluminación Arquitectónica / Comercial">💡 Iluminación de Diseño / Comercial</option>
+                <option value="Otro Requerimiento">📝 Otro Requerimiento Especial</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5 font-mono">
+                Ubicación / Barrio *
+              </label>
+              <input type="text" id="rgz-location" placeholder="Ej: Recoleta, Belgrano, Olivos, San Isidro..." required
+                     class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-rgz-cobalt focus:bg-white transition" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5 font-mono">
+                Nombre o Empresa
+              </label>
+              <input type="text" id="rgz-name" placeholder="Ej: Arq. González / Administración..." 
+                     class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-rgz-cobalt focus:bg-white transition" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5 font-mono">
+              Detalle o Especificación Técnica
+            </label>
+            <textarea id="rgz-details" rows="2" placeholder="Describí brevemente el alcance del proyecto o la situación actual..."
+                      class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-rgz-cobalt focus:bg-white transition"></textarea>
+          </div>
+
+          <button type="submit"
+                  class="w-full bg-slate-900 hover:bg-slate-800 active:bg-black text-white font-bold text-base py-4 px-6 rounded-2xl flex items-center justify-center gap-3 shadow-lg transition transform hover:-translate-y-0.5 border border-slate-700">
+            <svg class="w-5 h-5 fill-current text-emerald-400" viewBox="0 0 24 24">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+            </svg>
+            <span>Enviar Solicitud por WhatsApp al 11 7823-2233</span>
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 7. GARANTÍA & FAQ -->
+  <section id="garantia" class="py-16 bg-white border-b border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-10">
+        <span class="font-mono text-xs font-bold uppercase tracking-wider text-slate-700 bg-slate-100 px-3 py-1 rounded-full">
+          Preguntas Frecuentes
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">
+          Garantía y Metodología de Trabajo
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        
+        <details class="group bg-slate-50 border border-slate-200 rounded-2xl p-4 transition open:bg-white open:shadow-md">
+          <summary class="font-bold text-sm text-slate-900 cursor-pointer flex items-center justify-between list-none">
+            <span>¿Cómo aseguran la calidad de los materiales utilizados?</span>
+            <span class="text-rgz-cobalt font-mono font-bold group-open:rotate-180 transition transform">▼</span>
+          </summary>
+          <p class="text-xs text-slate-600 mt-3 leading-relaxed border-t border-slate-200 pt-3">
+            Trabajamos exclusivamente con marcas líderes con certificación IRAM y homologación internacional (Schneider, ABB, Siemens, Prysmian). No empleamos materiales genéricos ni cables fuera de norma que comprometan la seguridad.
+          </p>
+        </details>
+
+        <details class="group bg-slate-50 border border-slate-200 rounded-2xl p-4 transition open:bg-white open:shadow-md">
+          <summary class="font-bold text-sm text-slate-900 cursor-pointer flex items-center justify-between list-none">
+            <span>¿Emiten factura formal y certificados para administraciones y empresas?</span>
+            <span class="text-rgz-cobalt font-mono font-bold group-open:rotate-180 transition transform">▼</span>
+          </summary>
+          <p class="text-xs text-slate-600 mt-3 leading-relaxed border-t border-slate-200 pt-3">
+            Sí. Emitimos Facturas oficiales A y B con el correspondiente desglose y memoria de trabajo para rendición de cuentas en consorcios y deducciones impositivas corporativas.
+          </p>
+        </details>
+
+        <details class="group bg-slate-50 border border-slate-200 rounded-2xl p-4 transition open:bg-white open:shadow-md">
+          <summary class="font-bold text-sm text-slate-900 cursor-pointer flex items-center justify-between list-none">
+            <span>¿Qué tipo de garantía tienen las obras y adecuaciones?</span>
+            <span class="text-rgz-cobalt font-mono font-bold group-open:rotate-180 transition transform">▼</span>
+          </summary>
+          <p class="text-xs text-slate-600 mt-3 leading-relaxed border-t border-slate-200 pt-3">
+            Todas nuestras instalaciones cuentan con garantía escrita de conformidad sobre mano de obra y asistencia técnica post-obra garantizada.
+          </p>
+        </details>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 8. FOOTER CORPORATIVO -->
+  <footer class="bg-rgz-obsidian text-white pt-16 pb-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-800">
+        
+        <div class="lg:col-span-5 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-slate-900 rounded-xl flex items-center justify-center flex-shrink-0 border border-slate-700">
+              <span class="font-mono font-black text-lg text-white tracking-tighter">
+                RG<span class="text-rgz-bronzeLight">Z</span>
+              </span>
+            </div>
+            <div>
+              <div class="font-black text-lg tracking-tight text-white leading-none">
+                RGZ <span class="text-rgz-cobalt font-extrabold">SOLUCIONES</span>
+              </div>
+              <span class="text-[9px] font-bold tracking-widest text-slate-400 uppercase mt-1 block font-mono">
+                Servicios Técnicos & Mantenimiento
+              </span>
+            </div>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+            Ingeniería eléctrica, obras de precisión y mantenimiento preventivo para viviendas particulares de categoría, comercios y consorcios en CABA y GBA.
+          </p>
+        </div>
+
+        <div class="lg:col-span-3 space-y-3">
+          <span class="font-mono text-xs font-bold text-slate-300 tracking-wider uppercase block">Soluciones</span>
+          <ul class="text-xs text-slate-400 space-y-2">
+            <li><a href="#segmentos" class="hover:text-white transition">Viviendas & Residencias</a></li>
+            <li><a href="#segmentos" class="hover:text-white transition">Comercios & Oficinas</a></li>
+            <li><a href="#segmentos" class="hover:text-white transition">Consorcios & Edificios</a></li>
+            <li><a href="#servicios" class="hover:text-white transition">Medición de Puesta a Tierra</a></li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-4 space-y-3">
+          <span class="font-mono text-xs font-bold text-emerald-400 tracking-wider uppercase block">Contacto Oficial</span>
+          <div class="space-y-2 text-xs text-slate-300">
+            <p class="flex items-center gap-2">
+              <span class="text-emerald-400">📱</span>
+              <span>WhatsApp Directo: <strong class="text-white font-mono text-sm">11 7823-2233</strong></span>
+            </p>
+            <p class="flex items-center gap-2">
+              <span class="text-rgz-cobalt">📍</span>
+              <span>Cobertura: CABA y Gran Buenos Aires</span>
+            </p>
+            <p class="flex items-center gap-2">
+              <span class="text-slate-400">📄</span>
+              <span>Facturación: Factura A y B</span>
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-4">
+        <p>© 2026 RGZ Soluciones. Todos los derechos reservados.</p>
+        <p class="font-mono text-slate-400">Normas AEA 90364 · Materiales Homologados IRAM</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <a href="https://wa.me/5491178232233?text=Hola%20RGZ%20Soluciones%2C%20quisiera%20solicitar%20un%20presupuesto%20profesional." 
+     target="_blank" 
+     class="fixed bottom-5 right-5 z-50 bg-slate-900 hover:bg-slate-800 text-white p-3.5 sm:p-4 rounded-full shadow-2xl flex items-center justify-center group transition transform hover:scale-110 border-2 border-emerald-500"
+     aria-label="WhatsApp RGZ Soluciones">
+    <svg class="w-6 h-6 fill-current text-emerald-400" viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+    </svg>
+    <span class="absolute right-full mr-3 bg-slate-900 text-white font-mono text-xs font-bold px-3 py-1.5 rounded-xl shadow-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition pointer-events-none hidden sm:inline-block border border-slate-700">
+      💬 WhatsApp: 11 7823-2233
+    </span>
+  </a>
+
+  <!-- SCRIPTS -->
+  <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    }
+
+    function sendRgzQuote() {
+      const clientType = document.getElementById('rgz-client-type').value;
+      const serviceType = document.getElementById('rgz-service-type').value;
+      const location = document.getElementById('rgz-location').value.trim();
+      const name = document.getElementById('rgz-name').value.trim();
+      const details = document.getElementById('rgz-details').value.trim();
+
+      let text = `Hola RGZ Soluciones. Quisiera solicitar asesoramiento / presupuesto técnico:\n\n`;
+      text += `🏢 *Tipo de Solicitante:* ${clientType}\n`;
+      text += `⚡ *Servicio:* ${serviceType}\n`;
+      text += `📍 *Ubicación / Barrio:* ${location}\n`;
+      if (name) text += `👤 *Contacto / Empresa:* ${name}\n`;
+      if (details) text += `📝 *Detalle:* ${details}\n`;
+
+      const encodedText = encodeURIComponent(text);
+      const whatsappUrl = `https://wa.me/5491178232233?text=${encodedText}`;
+      window.open(whatsappUrl, '_blank');
+    }
+  </script>
+
+</body>
+</html>
